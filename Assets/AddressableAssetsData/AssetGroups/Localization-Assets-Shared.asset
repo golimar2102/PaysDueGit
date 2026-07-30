@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-Assets-Shared
+  m_GUID: e9d403e79f3c3444390efb61fbe3756f
+  m_SerializeEntries:
+  - m_GUID: 26faad6fb75ba17419f63dd0731ddde0
+    m_Address: Assets/Settings/Items Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ca880b1b0bea1b4ab589f2ae556f0df
+    m_Address: Assets/Settings/Localization/Structures/Structures Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a5f36831f9a79348a502fede8679dd6
+    m_Address: Assets/Settings/Localization/UI_Menu/UITable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbb9d24dece4329429be360bd45abd98
+    m_Address: Assets/Settings/Localization/Dialogues/dialogueTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4871b190080e8740b7d7c34b7ef5d21
+    m_Address: Assets/Settings/Localization/Liquid/LiquidType Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eef41523774675c45b60418f5510486c
+    m_Address: Assets/Settings/Localization/Var/varTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: ee1b22e30e016534f8e8cabe43ea55c4, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 976a690ce14f55f499f76abf8a2e326d, type: 2}
+    - {fileID: 11400000, guid: 503b7d2d90860204a94815b72201aeea, type: 2}

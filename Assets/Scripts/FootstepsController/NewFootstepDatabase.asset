@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: NewFootstepDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::FootstepDatabase
+  physicsMaterialGroups:
+  - physicsMaterial: {fileID: 13400000, guid: 311684c945adf64409f76f671b4eb1a9, type: 2}
+    volumeMultiplier: 0
+    footstepClips:
+    - clip: {fileID: 8300000, guid: 79c1273454a1ed74a9057d3e32640aad, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 6976a71d7ac6b0c4d8c0e64dd70e7cbf, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: c9920e1d55ffe394483ac1978e0cc377, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 744201fb9de9ab8479b989a60664b966, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 218ef301f22262446b1419cfb2eed412, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 494f1f035cf6fe949ba459ce037d8486, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 144f7abecd5fac042b21e4f30f22c5d6, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 1f188c9cd25e8924e928b284c5179c7b, type: 3}
+      volume: 1
+    landClips: []
+  - physicsMaterial: {fileID: 13400000, guid: dbaf7d4184eddd64197881a0df354a67, type: 2}
+    volumeMultiplier: 0
+    footstepClips:
+    - clip: {fileID: 8300000, guid: 0d60f71e1e52e2d4f9dc66013dbcb40a, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: f71b2fb7488963a4f81dae3abd179853, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 4fbd0b0728b5a5d45b507a4bdb796521, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: b03d144192a6b344e8fbb1d66c7f9629, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: c949e9fd4ce4a0a4c8b1fe1f717ac550, type: 3}
+      volume: 1
+    landClips: []
+  - physicsMaterial: {fileID: 13400000, guid: 070c9a3ef7911a7438267d08aa5c9426, type: 2}
+    volumeMultiplier: 0
+    footstepClips:
+    - clip: {fileID: 8300000, guid: a4f63d6f8226552468157749703a753a, type: 3}
+      volume: 0.3
+    - clip: {fileID: 8300000, guid: 594f807b3207b2d4aa031fdfd0597e0e, type: 3}
+      volume: 0.3
+    - clip: {fileID: 8300000, guid: 1a4f991909ea8314fbda686dbf7fcaa5, type: 3}
+      volume: 0.3
+    - clip: {fileID: 8300000, guid: ed3789298ccff1345a43cb51f8ea6091, type: 3}
+      volume: 0.3
+    landClips: []
+  terrainLayerGroups:
+  - terrainLayer: {fileID: 8574412962073106934, guid: eab3e98ca929f274b8bd52f7eda15894, type: 2}
+    volumeMultiplier: 0
+    footstepClips:
+    - clip: {fileID: 8300000, guid: a50032a41482c3945a61f73b29992c59, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 0e996caf34a8fc648b3f4c0462a2a056, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 0eba144410e658c4ea9f7ccfcd77c35f, type: 3}
+      volume: 1
+    landClips: []
+  - terrainLayer: {fileID: 8574412962073106934, guid: 2b59b7421b7be464592869dbad8ce004, type: 2}
+    volumeMultiplier: 0
+    footstepClips: []
+    landClips: []
+  - terrainLayer: {fileID: 8574412962073106934, guid: cbeae110f89e59249829ba46eb783d13, type: 2}
+    volumeMultiplier: 0
+    footstepClips:
+    - clip: {fileID: 8300000, guid: 0d60f71e1e52e2d4f9dc66013dbcb40a, type: 3}
+      volume: 0.5
+    - clip: {fileID: 8300000, guid: f71b2fb7488963a4f81dae3abd179853, type: 3}
+      volume: 0.5
+    - clip: {fileID: 8300000, guid: 4fbd0b0728b5a5d45b507a4bdb796521, type: 3}
+      volume: 0.5
+    - clip: {fileID: 8300000, guid: b03d144192a6b344e8fbb1d66c7f9629, type: 3}
+      volume: 0.5
+    - clip: {fileID: 8300000, guid: c949e9fd4ce4a0a4c8b1fe1f717ac550, type: 3}
+      volume: 0.5
+    landClips: []
+  defaultFootstepClips: []
+  defaultLandClips: []

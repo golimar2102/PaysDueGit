@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5061652500870021240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4722337514240026012}
+  - component: {fileID: 8726408790641373213}
+  m_Layer: 0
+  m_Name: WheatGrower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4722337514240026012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5061652500870021240}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 493.37442, y: 0.944389, z: 18865.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8726408790641373213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5061652500870021240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc662f4d3d471a144a2f8a1e0b53200b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlantedPlant
+  stages:
+  - stageName: Seed
+    visualPrefab: {fileID: 7219152716025247279, guid: 10e075f25d38eae4e846b15ba5db8f73, type: 3}
+    rotationFix: {x: 90, y: 0, z: 0}
+    hoursToReach: 0
+    canGatherByHand: 0
+    allowedTools: []
+    allowedToolIDs: 
+    dropItems: []
+  - stageName: Young
+    visualPrefab: {fileID: 4633738117503554941, guid: 11834b6486858e54b8369409e45cc6e4, type: 3}
+    rotationFix: {x: 90, y: 0, z: 0}
+    hoursToReach: 12
+    canGatherByHand: 1
+    allowedTools: []
+    allowedToolIDs: 
+    dropItems:
+    - {fileID: 5685457073686468467, guid: 83e06287800e9ed40b13a8939e89fde9, type: 3}
+    - {fileID: 5685457073686468467, guid: 83e06287800e9ed40b13a8939e89fde9, type: 3}
+  - stageName: Adult
+    visualPrefab: {fileID: 39798786249021011, guid: e7e47e996fddf7d43ae9fe3cfa0e6d76, type: 3}
+    rotationFix: {x: 90, y: 0, z: 0}
+    hoursToReach: 36
+    canGatherByHand: 1
+    allowedTools: []
+    allowedToolIDs: 
+    dropItems:
+    - {fileID: 5938517110455483394, guid: ea3204c4e43a21b41b326ef4d98a233f, type: 3}
+    - {fileID: 5938517110455483394, guid: ea3204c4e43a21b41b326ef4d98a233f, type: 3}
+  emptyHolePrefab: {fileID: 0}

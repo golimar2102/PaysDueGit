@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: varTable Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: varTable
+  m_TableCollectionNameGuidString: eef41523774675c45b60418f5510486c
+  m_Entries:
+  - m_Id: 233500041216
+    m_Key: var_wrongLiquid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 419857162240
+    m_Key: var_differentLiquid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 678717022208
+    m_Key: var_objFull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 873831849984
+    m_Key: var_needVessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1169727414272
+    m_Key: var_vesselFull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1304649785344
+    m_Key: var_needDifferentContainer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4740078362624
+    m_Key: var_notThirsty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4934819897344
+    m_Key: var_needEmptyVessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5101761585152
+    m_Key: var_empty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5756597297152
+    m_Key: var_drink
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2192421817856032880
+  references:
+    version: 2
+    RefIds:
+    - rid: 2192421817856032880
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1782905429529

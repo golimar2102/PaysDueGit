@@ -1,0 +1,1063 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4149790653886058054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3192138910834509002}
+  m_Layer: 8
+  m_Name: CameraDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3192138910834509002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149790653886058054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 2.59, z: 7.73}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6046320195390618843}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1001 &6080529458869721904
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8983264127611602055, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 490.52
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3899999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18875.234
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8585150805757010029, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -7456836869834101377, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6970241118533344629, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Name
+      value: ChestBONE
+      objectReference: {fileID: 0}
+    - target: {fileID: -6440197951265529842, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6434048071799095157, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -5947591150531211415, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4683107926218518994, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4225120890385051131, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -3312975425313617174, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2691847655305630375, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2678983451264595910, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2360174046710611494, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2136804610438784601, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2011446119229568637, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2000433169682156828, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Name
+      value: LungR
+      objectReference: {fileID: 0}
+    - target: {fileID: -719461949784908941, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -128302399242263275, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Name
+      value: LungL
+      objectReference: {fileID: 0}
+    - target: {fileID: 474322256653787523, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 541559810610826279, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 607667708130651123, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Name
+      value: wolfVariant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 939503802013587211, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324147659230705019, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334650115251210304, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453775897943183176, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377749012321480501, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587767845352908149, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731130694935272848, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948538303699017717, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977500053591026511, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 80f9c0d2b64a66f429e7d220b54f2d65, type: 2}
+    - target: {fileID: 7432139039183706492, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638851553099996651, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977165984977731795, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3192138910834509002}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2046207816321252299}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3155827659465571049}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9176824476348175733}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3665606602572620359}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9062207323461485470}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 686001369603344705}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7376553268399735447}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4248535326462006657}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6308045850623423459}
+  m_SourcePrefab: {fileID: 100100000, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+--- !u!95 &362809125957723809 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+  m_PrefabInstance: {fileID: 6080529458869721904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6046320195390618843 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+  m_PrefabInstance: {fileID: 6080529458869721904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6386958052292519521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6678fe2c2a561a84e8372452dcac8471, type: 3}
+  m_PrefabInstance: {fileID: 6080529458869721904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &2046207816321252299
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Enabled: 1
+  m_AgentTypeID: 658490984
+  m_Radius: 1.2
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 5.95
+  m_BaseOffset: 2.01
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &3155827659465571049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92cf3a503a865e64db3889c0c95c9b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
+  age: 18
+  daysPerAgeYear: 7
+  starvationGraceDays: 2.5
+  hungerDepletionPerDay: 25
+  isReadyToBreed: 0
+  breedCooldown: 30
+  breedApproachDistance: 1.2
+  heartParticlePrefab: {fileID: 0}
+  breedPartner: {fileID: 0}
+  isBreedingInProgress: 0
+  personality: 1
+  currentState: 1
+  alertLevel: 0
+  disableAI: 1
+  _debugInfo: 
+  player: {fileID: 0}
+  animator: {fileID: 362809125957723809}
+  eyePoint: {fileID: 6046320195390618843}
+  maxHealth: 150
+  currentHealth: 0
+  damage: 10
+  gender: 0
+  StandartNPC: 0
+  hunger: 100
+  lust: 0
+  maxStunLevel: 100
+  currentStunLevel: 0
+  stunRecoveryRate: 5
+  currentSlaveryRoom: {fileID: 0}
+  escapeState: 0
+  maxStamina: 100
+  staminaRegenRate: 12
+  staminaRegenDelay: 2
+  runStaminaDrain: 8
+  attackStaminaDrain: 20
+  jumpStaminaDrain: 15
+  walkSpeed: 9
+  sneakSpeed: 1.2
+  runSpeed: 20
+  visionRange: 100
+  fovAngle: 110
+  peripheralRange: 7
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 512
+  hearingRange: 40
+  suspicionToDetectTime: 1.5
+  memoryDuration: 10
+  attackRange: 6
+  neutralPersonalSpace: 5
+  neutralAlertRange: 9
+  roamRadius: 20
+  idlePauseMin: 2
+  idlePauseMax: 6
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  poiTag: POI
+  minRoamDistance: 8
+  roamAroundStart: 1
+  doorInteractionRadius: 1.5
+  doorCloseDistance: 5
+  followDistance: 3
+  followMaxRange: 25
+  idleActionInterval: 9
+  factionID: 1
+  friendlyFireReaction: 1
+  currentTarget: {fileID: 0}
+  currentStamina: 0
+--- !u!136 &9176824476348175733
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3214264
+  m_Height: 6.132558
+  m_Direction: 1
+  m_Center: {x: 0.024963379, y: 0.9943633, z: 0.15757751}
+--- !u!114 &3665606602572620359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186ffb0c3d2b7ef46b9e90e7e4afd42b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  localizedNpcName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  npcName: "\u0420\u043E\u0431\u0435\u0440\u0442\u043E"
+  dialogueCameraPoint: {fileID: 3192138910834509002}
+  hasFirstTimeDialogue: 1
+  firstTimeDialoguePlayed: 0
+  dialogueSaveKey: 
+  firstTimeNodes:
+  - localizedNpcText:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    npcText: "\u041E-\u043E-\u043E, \u043D\u0443 \u0438 \u0441\u043A\u043E\u043B\u044C\u043A\u043E
+      \u0432\u0435\u043A\u043E\u0432 \u0442\u0443\u0442 \u043D\u043E\u0432\u044B\u0445
+      \u043B\u0438\u0446 \u043D\u0435 \u0431\u044B\u043B\u043E? \u041C\u043E\u0451
+      \u043F\u043E\u0447\u0442\u0435\u043D\u0438\u0435, \u0437\u0430\u0431\u043B\u0443\u0434\u0448\u0430\u044F
+      \u0434\u0443\u0448\u0430. \u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
+      \u0432 \u043D\u0438\u043A\u0443\u0434\u0430."
+    npcTextEng: Well, well. Feels like actual eons since I last saw a fresh face
+      around here. Greetings, lost soul. Welcome to nowhere.
+    options:
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u0422\u044B \u043A\u0442\u043E?"
+      buttonTextEng: Who are you?
+      nextNodeIndex: 1
+      npcAnimationStates: []
+      playerAnimationStates: []
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u0427\u0442\u043E \u044D\u0442\u043E \u0437\u0430 \u043C\u0435\u0441\u0442\u043E?"
+      buttonTextEng: What is that place?
+      nextNodeIndex: 2
+      npcAnimationStates: []
+      playerAnimationStates: []
+    npcAnimationStates:
+    - Talk1
+    playerAnimationStates: []
+    displayRect:
+      serializedVersion: 2
+      x: 8
+      y: 7
+      width: 280
+      height: 506
+  - localizedNpcText:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    npcText: "\u041A\u0442\u043E \u044F? \u0425\u0435\u0445... \u0415\u0441\u043B\u0438
+      \u0431\u044B \u044F \u0441\u0430\u043C \u0437\u043D\u0430\u043B. \u041A\u043E\u0433\u0434\u0430-\u0442\u043E
+      \u0443 \u043C\u0435\u043D\u044F \u0431\u044B\u043B\u043E \u0441\u0432\u043E\u0451
+      \u0434\u0435\u043B\u043E. \u0414\u0443\u043C\u0430\u043B, \u0436\u0438\u0437\u043D\u044C
+      \u0443\u0434\u0430\u043B\u0430\u0441\u044C. \u0410 \u043F\u043E\u0442\u043E\u043C...
+      \u043D\u0443... \u0436\u0438\u0437\u043D\u044C \u0443\u043C\u0435\u0435\u0442
+      \u043B\u043E\u043C\u0430\u0442\u044C. \u0412 \u043E\u0431\u0449\u0435\u043C,
+      \u043F\u0435\u0440\u0435\u0434 \u0441\u043C\u0435\u0440\u0442\u044C\u044E \u044F
+      \u0443\u0436\u0435 \u043F\u0440\u043E\u0441\u0442\u043E \u0442\u0430\u043A\u0441\u043E\u0432\u0430\u043B.
+      \u042F \u0420\u043E\u0431\u0435\u0440\u0442\u043E."
+    npcTextEng: Who am I? Heh... wish I knew. I used to have a business. Thought
+      I made it. And then... well... life has a way of breaking you. Ended up driving
+      a taxi before it all went dark. I'm Roberto.
+    options:
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u0418 \u0442\u044B \u0434\u0430\u0432\u043D\u043E \u0442\u0443\u0442?"
+      buttonTextEng: Have you been here long?
+      nextNodeIndex: 3
+      npcAnimationStates:
+      - Yes
+      playerAnimationStates: []
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u0422\u044B \u0447\u0442\u043E \u0442\u043E \u0441\u043A\u0430\u0437\u0430\u043B
+        \u043F\u0440\u043E \u043D\u043E\u0432\u044B\u0445 \u043B\u0438\u0446."
+      buttonTextEng: You said something about new faces.
+      nextNodeIndex: 4
+      npcAnimationStates: []
+      playerAnimationStates: []
+    npcAnimationStates:
+    - Talk1
+    playerAnimationStates: []
+    displayRect:
+      serializedVersion: 2
+      x: 314
+      y: 5
+      width: 280
+      height: 564
+  - localizedNpcText:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    npcText: "\u042D\u0442\u043E \u043C\u0435\u0441\u0442\u043E \u2014 \u0442\u0432\u043E\u0451
+      \u041B\u0438\u043C\u0431\u043E. \u0418 \u043C\u043E\u0451. \u041C\u044B \u0432
+      \u043E\u0434\u043D\u043E\u0439 \u043B\u043E\u0434\u043A\u0435, \u043F\u0430\u0440\u0435\u043D\u044C.
+      \u0412\u043E\u043E\u0431\u0449\u0435, \u044F \u0442\u0443\u0442 \u0437\u0430
+      \u0433\u043B\u0430\u0432\u043D\u043E\u0433\u043E\u2026 \u043D\u0443, \u043D\u043E\u043C\u0438\u043D\u0430\u043B\u044C\u043D\u043E.
+      \u0416\u043D\u0435\u0446 \u0441\u043F\u0443\u0441\u0442\u0438\u043B \u043F\u0440\u0438\u043A\u0430\u0437,
+      \u0430 \u044F \u0447\u0451? \u042F \u043D\u0438\u0447\u0451. \u041A\u0442\u043E
+      \u044F \u0442\u0430\u043A\u043E\u0439, \u0447\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u0447\u0438\u0442\u044C
+      \u044D\u0442\u043E\u0439 \u043C\u0430\u0445\u0438\u043D\u0435? \u041F\u0443\u0441\u0442\u043E\u0435
+      \u043C\u0435\u0441\u0442\u043E."
+    npcTextEng: This place is your Limbo. And mine. We're in the same boat, pal.
+      Technically, I'm the boss around here... well, on paper. The Reaper laid down
+      the law, and who am I to talk back to that guy? Right, a nobody.
+    options:
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u041F\u043E\u043D\u044F\u0442\u043D\u043E.."
+      buttonTextEng: I see...
+      nextNodeIndex: 0
+      npcAnimationStates: []
+      playerAnimationStates: []
+    npcAnimationStates:
+    - Talk1
+    playerAnimationStates: []
+    displayRect:
+      serializedVersion: 2
+      x: 318
+      y: 604
+      width: 280
+      height: 457
+  - localizedNpcText:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    npcText: "\u042F \u0442\u043E\u0440\u0447\u0443 \u0432 \u044D\u0442\u043E\u0439
+      \u0434\u044B\u0440\u0435 \u0442\u0430\u043A \u0434\u043E\u043B\u0433\u043E,
+      \u0447\u0442\u043E \u0432\u0440\u0435\u043C\u044F \u043F\u043E\u0442\u0435\u0440\u044F\u043B\u043E
+      \u0441\u043C\u044B\u0441\u043B. \u041D\u0430\u0432\u0435\u0440\u043D\u043E\u0435,
+      \u0435\u0449\u0451 \u0434\u043E \u0442\u043E\u0433\u043E, \u043A\u0430\u043A
+      \u0442\u044B \u0432\u043E\u043E\u0431\u0449\u0435 \u0440\u043E\u0434\u0438\u043B\u0441\u044F.
+      \u0414\u0430 \u043A\u0430\u043A\u043E\u0439 \u0442\u0430\u043C... \u041E\u0447\u0435\u0432\u0438\u0434\u043D\u043E,
+      \u0447\u0442\u043E \u0434\u043E\u043B\u044C\u0448\u0435."
+    npcTextEng: I've been rotting in this place for so long, time doesn't even mean
+      anything anymore. Probably since before you were even a thought. Actually...
+      definitely before.
+    options:
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u041A\u043E\u0435 \u0447\u0442\u043E \u0435\u0449\u0435"
+      buttonTextEng: Something else
+      nextNodeIndex: 1
+      npcAnimationStates: []
+      playerAnimationStates: []
+    npcAnimationStates:
+    - Talk1
+    playerAnimationStates: []
+    displayRect:
+      serializedVersion: 2
+      x: 630
+      y: 15
+      width: 280
+      height: 428
+  - localizedNpcText:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    npcText: "\u0423\u0433\u0443. \u0414\u043E \u0442\u0435\u0431\u044F \u0442\u0443\u0442\u2026
+      \u044D\u0445, \u043F\u0430\u043C\u044F\u0442\u044C \u0443\u0436\u0435 \u043D\u0438
+      \u043A \u0447\u0451\u0440\u0442\u0443, \u043D\u043E \u0431\u044B\u043B \u043E\u0434\u0438\u043D
+      \u0441\u043B\u0430\u0432\u043D\u044B\u0439 \u043C\u0430\u043B\u044B\u0439.
+      \u041F\u0440\u043E\u0448\u043B\u044B\u0439 \xAB\u0445\u043E\u0437\u044F\u0438\u043D\xBB
+      \u044D\u0442\u043E\u0439 \u0434\u0435\u0431\u0438\u043B\u044C\u043D\u043E\u0439
+      \u0444\u0435\u0440\u043C\u044B. \u041D\u0443, \u0442\u043E \u0435\u0441\u0442\u044C
+      \u043C\u043E\u0439 \u043F\u043E\u0434\u0447\u0438\u043D\u0435\u043D\u043D\u044B\u0439.
+      \u0417\u0432\u0430\u043B\u0438 \u0442\u043E \u043B\u0438 \u0425\u0438\u0440\u043E,
+      \u0442\u043E \u043B\u0438 \u0425\u0435\u0440\u2026 \u0430\u0439, \u0437\u0430\u0431\u0435\u0439.
+      \u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u2014 \u0447\u0443\u0432\u0430\u043A
+      \u0441\u0442\u0451\u0440\u0441\u044F, \u0438 \u0442\u0435\u043F\u0435\u0440\u044C
+      \u043D\u0430 \u0435\u0433\u043E \u043C\u0435\u0441\u0442\u0435 \u0442\u044B.
+      \u0411\u0443\u0434\u0443\u0442 \u0432\u043E\u043F\u0440\u043E\u0441\u044B \u2014
+      \u0432\u0430\u043B\u044F\u0439, \u043D\u0435 \u0441\u0442\u0435\u0441\u043D\u044F\u0439\u0441\u044F.
+      \u042F \u0445\u043E\u0442\u044C \u0438 \u0432\u043E\u043B\u043A, \u043D\u043E
+      \u043D\u0435 \u0443\u043A\u0443\u0448\u0443. \u041F\u043E \u043A\u0440\u0430\u0439\u043D\u0435\u0439
+      \u043C\u0435\u0440\u0435, \u043F\u043E\u043A\u0430 \u0442\u044B \u043C\u043D\u0435
+      \u043E\u043A\u043E\u043D\u0447\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u043C\u043E\u0437\u0433
+      \u043D\u0435 \u0432\u044B\u043D\u0435\u0441\u0435\u0448\u044C. \u0410 \u0442\u0430\u043A
+      \u2014 \u0441\u043F\u0440\u0430\u0448\u0438\u0432\u0430\u0439 \u0441\u043A\u043E\u043B\u044C\u043A\u043E
+      \u0432\u043B\u0435\u0437\u0435\u0442. \u0421 \u0448\u0435\u0441\u0442\u0438
+      \u0432\u0435\u0447\u0435\u0440\u0430 \u0434\u043E \u0441\u0435\u043C\u0438
+      \u0443\u0442\u0440\u0430 \u044F \u0443 \u0441\u0435\u0431\u044F \u2014 \u0432\u043E\u043D
+      \u0432 \u0442\u043E\u0439 \u0441\u0442\u0430\u0440\u043E\u0439 \u0445\u0430\u043B\u0443\u043F\u0435
+      \u0432 \u0443\u0433\u043B\u0443. \u0412 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u043E\u0435
+      \u0432\u0440\u0435\u043C\u044F \u043F\u0440\u043E\u0441\u0442\u043E \u0448\u0430\u0442\u0430\u044E\u0441\u044C
+      \u0442\u0443\u0442 \u0438 \u0440\u0430\u0437\u043C\u044B\u0448\u043B\u044F\u044E
+      \u043E \u0432\u0435\u0447\u043D\u043E\u043C. \u0410 \u0445\u0440\u0435\u043D
+      \u043B\u0438 \u043C\u043D\u0435 \u0435\u0449\u0451 \u0434\u0435\u043B\u0430\u0442\u044C?"
+    npcTextEng: "Yep. Before you, there was... ugh, can't even remember when, but
+      he was a decent kid. The previous \"owner\" of this shitty farm. Well, my subordinate,
+      technically. Name was Hiro, or Hero, or... whatever, doesn't matter. Point
+      is, he\u2019s gone, and now you\u2019re in his shoes. If you got questions,
+      don't be shy. I might be a wolf, but I don\u2019t bite. At least, not until
+      you completely annoy the shit out of me. Other than that, ask away. From 6
+      PM to 7 AM, I\u2019m at home\u2014that raggedy old shack in the corner. The
+      rest of the time, I\u2019m just wandering around, pondering existence. Not
+      like I got anything better to do anyway."
+    options:
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u0425\u043E\u0440\u043E\u0448\u043E. \u0423\u0441\u043B\u044B\u0448\u0430\u043B
+        \u0442\u0435\u0431\u044F"
+      buttonTextEng: Alright. I heard you
+      nextNodeIndex: -1
+      npcAnimationStates:
+      - 
+      playerAnimationStates: []
+    npcAnimationStates:
+    - Talk1
+    playerAnimationStates: []
+    displayRect:
+      serializedVersion: 2
+      x: 645
+      y: 572
+      width: 280
+      height: 748
+  voiceBlip: {fileID: 8300000, guid: 1b02f3dca8bb40943a068054f28bf627, type: 3}
+  voicePitch: 1
+  nodes:
+  - localizedNpcText:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    npcText: ...
+    npcTextEng: ...
+    options:
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u041D\u0430\u043F\u043E\u043C\u043D\u0438, \u0447\u0442\u043E
+        \u044D\u0442\u043E \u0437\u0430 \u043C\u0435\u0441\u0442\u043E?"
+      buttonTextEng: Next...
+      nextNodeIndex: 1
+      npcAnimationStates: []
+      playerAnimationStates: []
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: "\u0427\u0442\u043E \u043C\u043D\u0435 \u0434\u0435\u043B\u0430\u0442\u044C?"
+      buttonTextEng: Next...
+      nextNodeIndex: 1
+      npcAnimationStates: []
+      playerAnimationStates: []
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: 
+      buttonTextEng: Next...
+      nextNodeIndex: -1
+      npcAnimationStates: []
+      playerAnimationStates: []
+    - localizedButtonText:
+        m_TableReference:
+          m_TableCollectionName: 
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      buttonText: 
+      buttonTextEng: Next...
+      nextNodeIndex: 2
+      npcAnimationStates: []
+      playerAnimationStates: []
+    npcAnimationStates: []
+    playerAnimationStates: []
+    displayRect:
+      serializedVersion: 2
+      x: 30
+      y: 40
+      width: 280
+      height: 864
+  - localizedNpcText:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    npcText: "\u0422\u0435\u043A\u0441\u0442, \u043A\u043E\u0442\u043E\u0440\u044B\u0439
+      \u0441\u043A\u0430\u0436\u0435\u0442 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436..."
+    npcTextEng: NPC English text...
+    options: []
+    npcAnimationStates: []
+    playerAnimationStates: []
+    displayRect:
+      serializedVersion: 2
+      x: 412
+      y: 71
+      width: 280
+      height: 269
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &9062207323461485470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ec82eb3d5df244fb182bdc4ce76a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkinnedBlinkController
+  bodyRenderer: {fileID: 0}
+  eyesOpenMaterial: {fileID: 2100000, guid: fbc383260d0faa7409c9a5df72467e18, type: 2}
+  eyesClosedMaterial: {fileID: 2100000, guid: e602afc505b1c1d44a219173cc9db38e, type: 2}
+  minBlinkWait: 2
+  maxBlinkWait: 6
+  blinkDuration: 0.12
+--- !u!82 &686001369603344705
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8276079083389311804, guid: 779f9ab709292ac4887935ec246798c8, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7376553268399735447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baac1b6e08ddaeb4a9aaa9d85dae386f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FootstepController
+  actorType: 2
+  footstepDatabase: {fileID: 11400000, guid: 026acc892612bc24cb324039d5935a63, type: 2}
+  walkStepInterval: 0.5
+  sprintStepInterval: 0.32
+  crouchStepInterval: 0.8
+  walkVolume: 1
+  sprintVolume: 1
+  crouchVolume: 0.15
+  footstepVolumeMultiplier: 1
+  minPitch: 0.85
+  maxPitch: 1.15
+  landVolume: 0.7
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 2176
+  rayStartOffset: 0.5
+  rayDistance: 0.7
+--- !u!114 &4248535326462006657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa38e42daffd4f4c9428595b5382957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathEffects
+  useGore: 0
+  bloodMistPrefab: {fileID: 0}
+  bloodDecalPrefab: {fileID: 7152833201576297855, guid: b6cef5909ee864f4b94f6057110bc992, type: 3}
+  meatConfigs:
+  - meatPrefab: {fileID: 2823909266691666897, guid: 06b51c0d9832f7d4fb1af4d0be7a2ec0, type: 3}
+    spawnCount: 4
+  - meatPrefab: {fileID: 6574400332361316571, guid: 90c961c261b03ce49a4e38695e5d1601, type: 3}
+    spawnCount: 4
+  - meatPrefab: {fileID: 2748992396912460488, guid: 318dc5402242b4548882d4159834cf6e, type: 3}
+    spawnCount: 4
+  - meatPrefab: {fileID: 8513513215578182118, guid: db5cb81845f13b9479b55cf55a86fa80, type: 3}
+    spawnCount: 4
+  explosionForce: 20
+  explosionRadius: 10
+  upwardsModifier: 6
+  explosionOffset: {x: 0, y: 1, z: 0}
+  meatLifetime: 30
+  corpseLifetime: 300
+  lootTable: []
+  gibLootTable:
+  - lootPrefab: {fileID: 1479703018784376635, guid: fde45f489b1c9c547ad372b486952a0c, type: 3}
+    dropChance: 50
+    minAmount: 1
+    maxAmount: 2
+  - lootPrefab: {fileID: 8284491965960770958, guid: 8b2acf750db681a46929948cdd52bb7c, type: 3}
+    dropChance: 100
+    minAmount: 1
+    maxAmount: 1
+  corpseHealth: 150
+  dropLootOnCorpseGib: 1
+  useDeathIndex: 1
+  deathIndexParam: DeathIndex
+  deathTriggerParam: Death
+  deathIndexMax: 3
+  deathTriggers:
+  - Die_Axe
+  - Die_Head
+  - Die_Sliced
+  isCrushedByMill: 0
+--- !u!114 &6308045850623423459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386958052292519521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98fd8330a5e291b4899bf1caf9d00f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCCorpse
+  npcType: 0
+  currentTable: {fileID: 0}
+  currentGrinder: {fileID: 0}
+  isChestCut: 0
+  isChestSpread: 0
+  isButchered: 0
+  extractedOrganNames: []
+  localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: GUID:7a5f36831f9a79348a502fede8679dd6
+    m_TableEntryReference:
+      m_KeyId: 31616730739499008
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  defaultPrompt: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u0442\u0435\u043B\u043E"
+  holdPositionOffset: {x: 0.5, y: 0, z: 3}
+  holdRotationOffset: {x: 0, y: 90, z: 0}
+  holdScaleOffset: {x: 1, y: 1, z: 1}
+  throwForwardForce: 3
+  throwUpwardForce: 1
+  adjustColliderOnDeath: 1
+  deadColliderDirection: 2
+  deadColliderCenter: {x: 0.02496338, y: -0.5, z: -1}
+  deadColliderHeight: 6.132558
+  deadColliderRadius: 1.321426
+  extraButcheringModels: []
+  originalParent: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,384 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Items Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Items
+  m_TableCollectionNameGuidString: 26faad6fb75ba17419f63dd0731ddde0
+  m_Entries:
+  - m_Id: 35436617728
+    m_Key: item_shovel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2428207357952
+    m_Key: item_apple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2489968484352
+    m_Key: item_rottenApple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2679681048576
+    m_Key: item_doubleBarrelShotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849881710592
+    m_Key: item_doubleBarrelShotgunAmmo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3824885424128
+    m_Key: item_axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5706982875136
+    m_Key: item_beefRaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5789107347456
+    m_Key: item_beefCooked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 475988625448960
+    m_Key: item_canineSkull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 680025954181120
+    m_Key: item_wolfFlesh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 680492578889728
+    m_Key: item_pigSkull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 681346304303104
+    m_Key: item_felineSkull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 720618805780480
+    m_Key: item_porkRaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 720676485849088
+    m_Key: item_porkCooked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 721754572972032
+    m_Key: item_canineRaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 722344740904960
+    m_Key: item_canineCooked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 724014329749504
+    m_Key: item_felineRaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 724130109317120
+    m_Key: item_felineCooked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 724685821042688
+    m_Key: item_chickenRaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 724761691807744
+    m_Key: item_chickenCooked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743224988655616
+    m_Key: item_cowSkull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 767194811064320
+    m_Key: item_avianSkull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 829074665627648
+    m_Key: item_pocketWatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1056378847223808
+    m_Key: item_backpackSmall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1147190541017088
+    m_Key: item_backpackBig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1147278709481472
+    m_Key: item_backpackHuge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1217369396469760
+    m_Key: item_oilLantern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2586606648156160
+    m_Key: item_padlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3117212805095424
+    m_Key: item_lampOil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7197830912401408
+    m_Key: item_hook
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7464527774867456
+    m_Key: item_belt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7532149526749184
+    m_Key: item_flashLight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8270365452132352
+    m_Key: item_meatGrinderHandle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8270994505457664
+    m_Key: item_meatGrinderHousing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8271135476015104
+    m_Key: item_meatGrinderAuger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8271365713944576
+    m_Key: item_meatGrinderFull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8582104215445504
+    m_Key: item_rawBeefMince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8583508170629120
+    m_Key: item_rawPorkMince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8583781291122688
+    m_Key: item_rawCanineMince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8583989899026432
+    m_Key: item_rawFelineMince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8584000531587072
+    m_Key: item_rawAvianMince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10057508994408448
+    m_Key: item_pan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11855985055358976
+    m_Key: item_grimGrub
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12018351848022016
+    m_Key: item_fuseFull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12020066559188992
+    m_Key: item_fuseHalf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12020157500088320
+    m_Key: item_emptyFuse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12991530716356608
+    m_Key: item_canister
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13008850448801792
+    m_Key: item_pot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13363259993219072
+    m_Key: item_candle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13415176094081024
+    m_Key: item_wax
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17307457259823104
+    m_Key: item_knife
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17308257864376320
+    m_Key: item_cleaver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22764966963568640
+    m_Key: item_bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25238964599250944
+    m_Key: item_dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25245981212663808
+    m_Key: item_rollingPin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26104400341622784
+    m_Key: item_pelmeniAvian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26105035241807872
+    m_Key: item_pelmeniBeef
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26106505798344704
+    m_Key: item_pelmeniCanine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26106976046931968
+    m_Key: item_pelmeniFeline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26107158306217984
+    m_Key: item_pelmeniPork
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26463923703111680
+    m_Key: item_pelmeniBeefB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26464722340536320
+    m_Key: item_pelmeniPorkB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26465174293569536
+    m_Key: item_pelmeniCanineB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26467237333295104
+    m_Key: item_pelmeniFelineB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26467369269321728
+    m_Key: item_pelmeniAvianB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26468631251509248
+    m_Key: item_pelmeniBeefF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26468748373254144
+    m_Key: item_pelmeniPorkF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26468857538404352
+    m_Key: item_pelmeniCanineF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26470139305123840
+    m_Key: item_pelmeniFelineF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26470313184190464
+    m_Key: item_pelmeniAvianF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33279986629599232
+    m_Key: item_container
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33344994398953472
+    m_Key: item_baseballBat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33610420508942336
+    m_Key: item_wheatSeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33629954724847616
+    m_Key: item_wheatAdultSpike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33630675897671680
+    m_Key: item_wheatYoungSpike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33657891230572544
+    m_Key: item_flourWhite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33659868379340800
+    m_Key: item_flourGreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33660040085757952
+    m_Key: item_flourRed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35798571100921856
+    m_Key: item_rawAvianMincePiece
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35801751729725440
+    m_Key: item_rawBeefMincePiece
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35801851998756864
+    m_Key: item_rawPorkMincePiece
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35801950686535680
+    m_Key: item_rawCanineMincePiece
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35802041707126784
+    m_Key: item_rawFelineMincePiece
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35830363203821568
+    m_Key: item_Bottle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38026342413885440
+    m_Key: item_cigs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38027385562456064
+    m_Key: item_chips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38027594652704768
+    m_Key: items_crackers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38027865726377984
+    m_Key: item_pills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38028211299278848
+    m_Key: item_coin
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5623276647077904673
+  references:
+    version: 2
+    RefIds:
+    - rid: 5623276647077904673
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1776271143212

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: varTable_en-US
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: eef41523774675c45b60418f5510486c, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 2192421817856032881
+  m_TableData:
+  - m_Id: 233500041216
+    m_Localized: Unsuitable liquid
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032881
+  - m_Id: 419857162240
+    m_Localized: Object contains a different liquid
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032881
+  - m_Id: 678717022208
+    m_Localized: Object is full
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032881
+  - m_Id: 873831849984
+    m_Localized: We need a vessel with a suitable liquid.
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032881
+  - m_Id: 1169727414272
+    m_Localized: The vessel is full
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032881
+  - m_Id: 1304649785344
+    m_Localized: The vessel contains another liquid ({liquid})
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032881
+  - m_Id: 4740078362624
+    m_Localized: Not thirsty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4934819897344
+    m_Localized: Need empty vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5101761585152
+    m_Localized: Object is empty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5756597297152
+    m_Localized: <color=yellow>[Hold {key}]</color> Drink
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032881
+  references:
+    version: 2
+    RefIds:
+    - rid: 2192421817856032881
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 1304649785344
+        - id: 233500041216
+        - id: 419857162240
+        - id: 678717022208
+        - id: 873831849984
+        - id: 1169727414272
+        - id: 5756597297152

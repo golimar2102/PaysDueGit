@@ -1,0 +1,295 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UITable_en-US
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 7a5f36831f9a79348a502fede8679dd6, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 2192421817856032886
+  m_TableData:
+  - m_Id: 457320685568
+    m_Localized: NEW GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 598370934784
+    m_Localized: LOAD GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 638153908224
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 860875644928
+    m_Localized: EXIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 970971930624
+    m_Localized: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1229840179200
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1333313658880
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1481842352128
+    m_Localized: Graphics quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1770012008448
+    m_Localized: Screen resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1906318499840
+    m_Localized: Window Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2551079493632
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554237804544
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555940691968
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2913580605440
+    m_Localized: Mouse settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3206355607552
+    m_Localized: Mouse sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3336379031552
+    m_Localized: Keyboard settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3466696056832
+    m_Localized: Interaction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3575907344384
+    m_Localized: Inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3616315269120
+    m_Localized: Drop item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3618269814784
+    m_Localized: Reload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619985285120
+    m_Localized: Sprint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3621579120640
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3623059709952
+    m_Localized: Attack/Shoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3624682905600
+    m_Localized: Attack2/Aim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3626683588608
+    m_Localized: Use item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3628130623488
+    m_Localized: Place light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4953799122944
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5148377079808
+    m_Localized: Master sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5642726137856
+    m_Localized: Sound effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5640993890304
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5844795121664
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7241380913152
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7243989770240
+    m_Localized: MAIN MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38112016195584
+    m_Localized: SAVE GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1475349266292736
+    m_Localized: Crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486681076129792
+    m_Localized: Additional interaction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2496636126224384
+    m_Localized: 'Time:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2496802409406464
+    m_Localized: Open/Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2496965576220672
+    m_Localized: Harvest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2497140352868352
+    m_Localized: 'Take:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2498092837363712
+    m_Localized: <color=yellow>[{key}]</color> Enter
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032886
+  - m_Id: 2498188308111360
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2498373180448768
+    m_Localized: On/Off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2551930244030464
+    m_Localized: Locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554042919149568
+    m_Localized: Remove a padlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554580905746432
+    m_Localized: Install a padlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2571148142305280
+    m_Localized: Start a conversation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8347817549488128
+    m_Localized: Use meat grinder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8355949164093440
+    m_Localized: Turn the handle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8357307237785600
+    m_Localized: Step away from the meat grinder.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9155747563692032
+    m_Localized: Turn the handle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12809318674980864
+    m_Localized: Pour out
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12809547876917248
+    m_Localized: Drink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13407139337854976
+    m_Localized: Inventory is full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13407824066371584
+    m_Localized: Collect wax
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24674181193916416
+    m_Localized: No power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27161626741301248
+    m_Localized: Use
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27509854397521920
+    m_Localized: <color=yellow>[Hold {key}]</color> Add {liquid}
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032886
+  - m_Id: 27510361845391360
+    m_Localized: <color=yellow>[Hold {key}]</color> Pour {liquid}
+    m_Metadata:
+      m_Items:
+      - rid: 2192421817856032886
+  - m_Id: 27543150846271488
+    m_Localized: Turn on tap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27543319897694208
+    m_Localized: Turn on tap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31616730739499008
+    m_Localized: Pickup body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32980184230518784
+    m_Localized: Stop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32980248172683264
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34482740391829504
+    m_Localized: Use workbench
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 2192421817856032886
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 27509854397521920
+        - id: 27510361845391360
+        - id: 2498092837363712

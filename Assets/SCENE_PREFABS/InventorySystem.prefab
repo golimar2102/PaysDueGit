@@ -1,0 +1,576 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3581831050953325762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7911550363397091861}
+  - component: {fileID: 8073503346518115627}
+  - component: {fileID: 6668184813899616}
+  - component: {fileID: 7298401473865169511}
+  - component: {fileID: 1997131593802074613}
+  m_Layer: 0
+  m_Name: InventorySystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7911550363397091861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581831050953325762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1470.5674, y: 0.00007, z: 1054.4595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8073503346518115627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581831050953325762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caff6d6e80992946a45a80bd109f8ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryContextMenu
+  menuPanel: {fileID: 0}
+  pourButton: {fileID: 0}
+  drinkButton: {fileID: 0}
+  parentCanvas: {fileID: 0}
+  locPourOut:
+    m_TableReference:
+      m_TableCollectionName: GUID:7a5f36831f9a79348a502fede8679dd6
+    m_TableEntryReference:
+      m_KeyId: 12809318674980864
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  locDrink:
+    m_TableReference:
+      m_TableCollectionName: GUID:7a5f36831f9a79348a502fede8679dd6
+    m_TableEntryReference:
+      m_KeyId: 12809547876917248
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  pourText: {fileID: 0}
+  drinkText: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &6668184813899616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581831050953325762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4dda9650966824982f6c475e293894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
+  inventoryUI: {fileID: 0}
+  equippedItemNameText: {fileID: 0}
+  tooltipPanel: {fileID: 0}
+  tooltipText: {fileID: 0}
+  hotbarSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inventorySlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  selectedSlotIndex: 0
+  hotbarPanel: {fileID: 0}
+  toggleHotbarKey: 110
+  slideSpeed: 8
+  invPosY: -115.5
+  invScale: 1
+  hudPosY: -200
+  hudScale: 1.2
+  hiddenPosY: -850
+  baseHotbarX: 0
+  mainCam: {fileID: 0}
+  dropForce: 8
+  allItemsDatabase:
+  - {fileID: 1697478807823193087, guid: f3823dd69647bc648b56d7749446aa5c, type: 3}
+  - {fileID: 255948660623315671, guid: 4d9765c0e155b434e8fa9f39b45ca36a, type: 3}
+  - {fileID: 2408834860912616336, guid: 30d76931f3537834bbca6a2b53d45344, type: 3}
+  - {fileID: 378629647546348446, guid: 8f16f750200e12642918cb3f3397167d, type: 3}
+  - {fileID: 1487048426883258700, guid: 551413a6f7245d14291157e6acc408e0, type: 3}
+  - {fileID: 5159531246687741926, guid: ef78a34aa9f146e44a165eb305e893dd, type: 3}
+  - {fileID: 7976006578436796347, guid: 517c254af6b3ea04b96f1c98231053f9, type: 3}
+  - {fileID: 6172918242335398162, guid: 07dd66ac91fdefb4387e0e2bd3289b2b, type: 3}
+  - {fileID: 7688871155800813342, guid: 0e7ee71c9ee5b464da805520a7e72a6c, type: 3}
+  - {fileID: 2550051797302126782, guid: ff5b995459b45844c97ef52c03547ca3, type: 3}
+  - {fileID: 1479703018784376635, guid: fde45f489b1c9c547ad372b486952a0c, type: 3}
+  - {fileID: 2547298779519479839, guid: 8abced79f091ad14aad8e5e1ec24d66d, type: 3}
+  - {fileID: 5845208146754896643, guid: ca66803fc4c564347a9ddc30782eb089, type: 3}
+  - {fileID: 6439057858950725243, guid: 84ca5a6d684849648850919591445e15, type: 3}
+  - {fileID: 1936732993266247481, guid: dd24d267df1adca4689a359e0f694a17, type: 3}
+  - {fileID: 6754676340790295451, guid: e5457852b5a937c438a55820dc105dd7, type: 3}
+  - {fileID: 7474334746825773184, guid: 3720fc06bcd9f574683e1e05c02f0a0d, type: 3}
+  - {fileID: 7759098464384735847, guid: 4ef9c7924f90c2f45903c8b29c9d53a9, type: 3}
+  - {fileID: 8284491965960770958, guid: 8b2acf750db681a46929948cdd52bb7c, type: 3}
+  - {fileID: 2440590751302707636, guid: ce33ace04bc775942a6fe802c90c7d95, type: 3}
+  - {fileID: 1639025733084551379, guid: 10e873e4489f45342831f1d0dc5bcfef, type: 3}
+  - {fileID: 8783084236597513393, guid: 3bd65de6b08228b458bf7bc9cc881eb9, type: 3}
+  - {fileID: 3500901906287772716, guid: b3878896151efe9499d40b0a70cf0f12, type: 3}
+  - {fileID: 4572856528050917856, guid: 58a84ec9f139b814e99ef493bca10fcb, type: 3}
+  - {fileID: 1904633726282159645, guid: bfcd157ac73b7ca469c2fed4d578dcdc, type: 3}
+  - {fileID: 3874723516286856978, guid: 60225a772e91661419d54480deab3ee7, type: 3}
+  - {fileID: 3625313852927172785, guid: 2dc853f090fcd984683855ac294f1cb6, type: 3}
+  - {fileID: 334211321668998382, guid: 2bf23aaf7164a2b4f98a0b0cb5d9c9c3, type: 3}
+  - {fileID: 5558024601286064706, guid: 907d408da4a7d784b87fcff828619df0, type: 3}
+  - {fileID: 7706612174609373496, guid: 9db3d7017b3e0914aaf2ed47394c826c, type: 3}
+  - {fileID: 8804201071374230128, guid: 4c555a46d38b1f44f950da3ab3d431d4, type: 3}
+  - {fileID: 1062682472605535978, guid: 0d2b4d1e0b423e24faaf74e980ca39bd, type: 3}
+  - {fileID: 2707705703978485277, guid: b2716fafe7b204145917246d6631bdd2, type: 3}
+  - {fileID: 647254660880826932, guid: 5a8a142ff1aa3894cafe1835497bccd4, type: 3}
+  - {fileID: 963906085216616276, guid: e0fae8adb8619394ba70865928e086b7, type: 3}
+  - {fileID: 7083852739272212679, guid: 7672112c5c98d7f458ba8b48c07f6f09, type: 3}
+  - {fileID: 258148080423351996, guid: 170bbf0a83af355498d4f05e60d949ca, type: 3}
+  - {fileID: 568089124750407724, guid: 09bb9f6e6845ea54f83a8e321b9c5818, type: 3}
+  - {fileID: 8045140578284033129, guid: a8dc749a75563ff4eae4d81a81ca828b, type: 3}
+  - {fileID: 7890628656496204690, guid: 17d76eecc6a31134983f87289d68a8b3, type: 3}
+  - {fileID: 4895729960124304233, guid: ebb92a42cdcb79e44b409f4de39ba6a0, type: 3}
+  - {fileID: 2044750240607354211, guid: 7974a7351d4a1dd41b2c3cac6e5169d6, type: 3}
+  - {fileID: 743611261060336399, guid: 9c0772eefbc319445875be8e44ec62f3, type: 3}
+  - {fileID: 8071244898247348890, guid: b1adca53bd4758d48b39ceb67314d65d, type: 3}
+  - {fileID: 5068999644997623845, guid: 1bd888550a8a8884c8ce887a1574b526, type: 3}
+  - {fileID: 5923483338958075737, guid: af1aa9b3f375f754aa5c9c9d3528d237, type: 3}
+  - {fileID: 3610938635166997117, guid: 4612fc0279495dc4ebd0594836e57015, type: 3}
+  - {fileID: 3146125454658129195, guid: 5d1168060f65b0a49890b39cfb40d5ff, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 5685457073686468467, guid: 83e06287800e9ed40b13a8939e89fde9, type: 3}
+  - {fileID: 5938517110455483394, guid: ea3204c4e43a21b41b326ef4d98a233f, type: 3}
+  - {fileID: 7552828290432238614, guid: c5905c7c303c41a48afdffe2cf58634c, type: 3}
+  - {fileID: 5280321397356013837, guid: 945a5763880ee5642bf5489cff919fdc, type: 3}
+  - {fileID: 4529575134688159630, guid: c1e8fd4f022fc9a4697022b6adc11543, type: 3}
+  - {fileID: 4180986269673630614, guid: 46402c536b1ea594da9a585aecdd6d5d, type: 3}
+  - {fileID: 1381023215932171804, guid: a45a5d2f6f44ba647b1dc3b33ce19592, type: 3}
+  - {fileID: 8386615078125621989, guid: 9f0618aa6b106a94c92177e73374f3a7, type: 3}
+  - {fileID: 4942420347887567834, guid: dc9a713e7df8cda43a094649a61c9e27, type: 3}
+  - {fileID: 3926507141944348243, guid: 3e6b350639f7f5d479f2f4475190cb5b, type: 3}
+  - {fileID: 4898426866828186759, guid: 23c4dad564e82a34dafbe57d60c9e94d, type: 3}
+  - {fileID: 8068026929150803006, guid: fbba926cd3a8d6c49b6a7efd123669a4, type: 3}
+  - {fileID: 9182851307330297638, guid: 4d185c8b6a1e76b46be851e2457958a1, type: 3}
+  - {fileID: 2303897326985431344, guid: dd77cd5e78294bd46827d19b3fbadd55, type: 3}
+  - {fileID: 2799353187949383453, guid: 224af6422757a094b872ff7fb063445a, type: 3}
+  - {fileID: 5919023991983815596, guid: f742b4f147dc7964c971069c3b83781b, type: 3}
+  - {fileID: 1156777089801389080, guid: f85849f4c8aa0b748bb336d6112bda1e, type: 3}
+  - {fileID: 1883097087329867126, guid: 00360ddd649f6fc4eb21b423bcbfeb72, type: 3}
+  lanternItemIDs: 190000001c00000020000000
+  backpackSlot: {fileID: 0}
+  baseInventorySlots: 6
+  backpackTiers:
+  - tierName: Small
+    itemIDs: 15000000
+    additionalSlots: 6
+  - tierName: Big
+    itemIDs: 16000000
+    additionalSlots: 12
+  - tierName: Huge
+    itemIDs: 17000000
+    additionalSlots: 18
+  waistSlot: {fileID: 0}
+  waistSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  waistSlotsContainer: {fileID: 0}
+  waistTiers:
+  - tierName: Leather belt
+    itemIDs: 1f000000
+    hookSlots: 2
+  waistSlideSpeed: 10
+  contextMenu: {fileID: 8073503346518115627}
+  locTimePrefix:
+    m_TableReference:
+      m_TableCollectionName: GUID:7a5f36831f9a79348a502fede8679dd6
+    m_TableEntryReference:
+      m_KeyId: 2496636126224384
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  isOpen: 0
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &7298401473865169511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581831050953325762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7d60dd6cf77ea47881a1a602ebc033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentManager
+  weapons:
+  - itemID: 0
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 1
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 2
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 3
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 4
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 5
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 6
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 7
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 8
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 9
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 10
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 11
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 12
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 13
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 14
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 15
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 16
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 17
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 18
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 19
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 20
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 21
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 22
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 23
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 24
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 25
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 26
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 27
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 28
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 29
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 30
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 31
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 32
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 33
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 34
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 35
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 36
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 37
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 38
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 39
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 40
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 41
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 42
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 43
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 44
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 45
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 46
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 47
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 48
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 49
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 50
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 51
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 52
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 53
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 73
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 74
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 75
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 76
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 77
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 78
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 79
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 80
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 81
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 82
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 83
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 84
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 85
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 86
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+  - itemID: 87
+    weaponObject: {fileID: 0}
+    customMaterial: {fileID: 0}
+--- !u!114 &1997131593802074613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581831050953325762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e9259d87e29a3429739c851251b260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorSummoner
+  doorPrefab: {fileID: 7601203876395423574, guid: a4efc321f2c89d04c87886553945d03d, type: 3}
+  summonButton: {fileID: 0}
+  summonDistance: 10
+  spawnHeight: 30
+  skyCheckDistance: 30
+  maxSearchRadius: 5
+  spawnRotationOffset: {x: 90, y: 0, z: 0}
+  initialFallSpeed: 30
+  extraGravity: 20
+  teleportDestinationPoint: {fileID: 0}
+  teleportTargetZone: 2
+  blockedVisual: {fileID: 0}
+  doorWidth: 1.2
+  doorHeight: 2.2
+  doorDepth: 0.4
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 2176
+  fallingSound: {fileID: 0}
+  landingSound: {fileID: 0}
+  openingSound: {fileID: 0}
+  openDelay: 0.5

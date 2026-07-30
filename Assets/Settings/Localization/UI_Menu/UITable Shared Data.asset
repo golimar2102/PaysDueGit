@@ -1,0 +1,288 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UITable Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: UITable
+  m_TableCollectionNameGuidString: 7a5f36831f9a79348a502fede8679dd6
+  m_Entries:
+  - m_Id: 7241380913152
+    m_Key: ui_btn_continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457320685568
+    m_Key: ui_newGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 598370934784
+    m_Key: ui_loadGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 638153908224
+    m_Key: ui_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7243989770240
+    m_Key: ui_btn_mainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 860875644928
+    m_Key: ui_btn_exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 970971930624
+    m_Key: ui_tabGraphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1229840179200
+    m_Key: ui_tabControls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1333313658880
+    m_Key: ui_tabSounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1481842352128
+    m_Key: ui_graphicsQuality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1770012008448
+    m_Key: ui_screenResolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1906318499840
+    m_Key: ui_windowMode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2551079493632
+    m_Key: ui_gqLow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554237804544
+    m_Key: ui_gqMedium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555940691968
+    m_Key: ui_gqHigh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4953799122944
+    m_Key: ui_language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2913580605440
+    m_Key: ui_controls_mouseSettings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3206355607552
+    m_Key: ui_controls_mouseSensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3336379031552
+    m_Key: ui_controls_keyboardSettings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3466696056832
+    m_Key: ui_controls_interaction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3575907344384
+    m_Key: ui_controls_inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3616315269120
+    m_Key: ui_controls_dropItem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3618269814784
+    m_Key: ui_controls_reload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619985285120
+    m_Key: ui_controls_sprint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3621579120640
+    m_Key: ui_controls_jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3623059709952
+    m_Key: ui_controls_attack/shoot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3624682905600
+    m_Key: ui_controls_attack2/aim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3626683588608
+    m_Key: ui_controls_useItem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3628130623488
+    m_Key: ui_controls_place
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5148377079808
+    m_Key: ui_audio_master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5640993890304
+    m_Key: ui_audio_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5642726137856
+    m_Key: ui_audio_soundEffects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5844795121664
+    m_Key: ui_btn_save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38112016195584
+    m_Key: ui_saveGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1475349266292736
+    m_Key: ui_controls_crouch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486681076129792
+    m_Key: ui_controls_extraInteract
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2496636126224384
+    m_Key: action_time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2496802409406464
+    m_Key: action_door
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2496965576220672
+    m_Key: action_harvest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2497140352868352
+    m_Key: action_pickup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2498092837363712
+    m_Key: action_enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2498188308111360
+    m_Key: action_exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2498373180448768
+    m_Key: action_toggle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2551930244030464
+    m_Key: action_locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554042919149568
+    m_Key: action_unlockPadlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554580905746432
+    m_Key: action_lockPadlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2571148142305280
+    m_Key: action_talk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8347817549488128
+    m_Key: action_useMeatGrinder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8355949164093440
+    m_Key: action_meatGrinderHandleTurn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8357307237785600
+    m_Key: action_exitFromMG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9155747563692032
+    m_Key: action_meatGrinderHandleTurnMouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12809318674980864
+    m_Key: action_pourOut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12809547876917248
+    m_Key: action_drink
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13407139337854976
+    m_Key: ui_inventoryFull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13407824066371584
+    m_Key: ui_pickUpWax
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24674181193916416
+    m_Key: action_NoPower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27161626741301248
+    m_Key: action_use
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27509854397521920
+    m_Key: action_pourIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27510361845391360
+    m_Key: action_pourInto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27543150846271488
+    m_Key: action_waterON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27543319897694208
+    m_Key: action_waterOFF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31616730739499008
+    m_Key: action_pickupCorpse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32980184230518784
+    m_Key: IndustrialMeatGrind_Stop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32980248172683264
+    m_Key: IndustrialMeatGrind_Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34482740391829504
+    m_Key: workbench_user
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5623276668206448711
+  references:
+    version: 2
+    RefIds:
+    - rid: 5623276668206448711
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1776341673694

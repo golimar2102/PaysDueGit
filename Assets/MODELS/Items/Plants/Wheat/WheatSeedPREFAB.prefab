@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4365211070165984804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 484.67703
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.29992464
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 527.5115
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      propertyPath: m_Name
+      value: WheatSeedPREFAB
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1650384209877618922}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1876937881555535703}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2585351834273786717}
+  m_SourcePrefab: {fileID: 100100000, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+--- !u!1 &3482744341705104245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f376c1dfda46984f90331c3b5025fb8, type: 3}
+  m_PrefabInstance: {fileID: 4365211070165984804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1650384209877618922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482744341705104245}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.31707808, y: 0.13862725, z: 0.5372795}
+  m_Center: {x: 0.016640171, y: -0.0018162725, z: -0.031290267}
+--- !u!114 &1876937881555535703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482744341705104245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec454d132a02484d823aa8ca5206a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpItem
+  localizedItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:26faad6fb75ba17419f63dd0731ddde0
+    m_TableEntryReference:
+      m_KeyId: 33610420508942336
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  itemIcon: {fileID: 21300000, guid: b089f5dddb899e849a96e1abb8052452, type: 3}
+  itemID: 69
+  isStackable: 1
+  amount: 1
+  maxStackSize: 30
+  requiresSnapPoint: 0
+  placementOffset: {x: 0, y: 0, z: 0}
+  itemPrefab: {fileID: 3482744341705104245}
+  lanternFuel: -1
+  throwMass: 0.8
+  throwGravityScale: 2
+  throwDrag: 0
+  throwSpinForce: 0.5
+  isFloating: 1
+  spinSpeed: 45
+  floatAmplitude: 0.2
+  floatSpeed: 2
+  isPickedUp: 0
+  isPlacedOnSnapPoint: 0
+  isPlaced: 0
+  destroyOnPickUp: 1
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &2585351834273786717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482744341705104245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.9997711, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+  effectColor: {r: 0, g: 0, b: 0, a: 0}
+  effectDistance: {x: 0, y: 0}

@@ -1,0 +1,314 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2570982674700055420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6113486725605017955}
+  - component: {fileID: 439613482353337422}
+  - component: {fileID: 6999424485558691306}
+  - component: {fileID: 7288489640683123848}
+  - component: {fileID: 4091404976894357281}
+  - component: {fileID: 181974103766081477}
+  m_Layer: 0
+  m_Name: _GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6113486725605017955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570982674700055420}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.27288, y: 34.87, z: 100.57962}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &439613482353337422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570982674700055420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4ce9960f1a8dd43b5d815d63767cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenuManager
+  pauseMenuPanel: {fileID: 0}
+  settingsPanel: {fileID: 0}
+  mainMenuSceneName: MainMenu
+  isPaused: 0
+--- !u!114 &6999424485558691306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570982674700055420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988728f612f5d034e899eca84cfad643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DayNightCycle
+  transitionSpeed: 2
+  currentDay: 1
+  timeOfDay: 10
+  timeMultiplier: 0.05
+  sunDirectionObject: {fileID: 0}
+  outdoorLights:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hourlyLighting:
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.06, g: 0.06, b: 0.06, a: 0}
+    fogColor: {r: 0.05882353, g: 0.05882353, b: 0.05882353, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.06, g: 0.06, b: 0.06, a: 0}
+    fogColor: {r: 0.05882353, g: 0.05882353, b: 0.05882353, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.06, g: 0.06, b: 0.06, a: 0.05882353}
+    fogColor: {r: 0.05882353, g: 0.05882353, b: 0.05882353, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.06, g: 0.06, b: 0.06, a: 0.05882353}
+    fogColor: {r: 0.05882353, g: 0.05882353, b: 0.05882353, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.06, g: 0.06, b: 0.06, a: 0.05882353}
+    fogColor: {r: 0.05882353, g: 0.05882353, b: 0.05882353, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.101960786}
+    fogColor: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.16, g: 0.16, b: 0.16, a: 0}
+    fogColor: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.17, g: 0.17, b: 0.17, a: 0.14901961}
+    fogColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.18, g: 0.18, b: 0.18, a: 0.14901961}
+    fogColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.19, g: 0.19, b: 0.19, a: 0.1882353}
+    fogColor: {r: 0.1882353, g: 0.1882353, b: 0.1882353, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.6, g: 0.6, b: 0.6, a: 0}
+    fogColor: {r: 0.6, g: 0.6, b: 0.6, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.8, g: 0.8, b: 0.8, a: 0}
+    fogColor: {r: 0.8, g: 0.8, b: 0.8, a: 0}
+  - lightIntensityFactor: 1
+    ambientColor: {r: 1, g: 1, b: 1, a: 0}
+    fogColor: {r: 1, g: 1, b: 1, a: 0}
+  - lightIntensityFactor: 1
+    ambientColor: {r: 1, g: 1, b: 1, a: 0}
+    fogColor: {r: 1, g: 1, b: 1, a: 0}
+  - lightIntensityFactor: 1
+    ambientColor: {r: 1, g: 1, b: 1, a: 0}
+    fogColor: {r: 1, g: 1, b: 1, a: 0}
+  - lightIntensityFactor: 1
+    ambientColor: {r: 1, g: 1, b: 1, a: 0}
+    fogColor: {r: 1, g: 1, b: 1, a: 0}
+  - lightIntensityFactor: 1
+    ambientColor: {r: 1, g: 1, b: 1, a: 0}
+    fogColor: {r: 1, g: 1, b: 1, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.8, g: 0.8, b: 0.8, a: 0}
+    fogColor: {r: 0.8, g: 0.8, b: 0.8, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.6, g: 0.6, b: 0.6, a: 0}
+    fogColor: {r: 0.6, g: 0.6, b: 0.6, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.6, g: 0.6, b: 0.6, a: 0}
+    fogColor: {r: 0.6, g: 0.6, b: 0.6, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+    fogColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.1, g: 0.1, b: 0.1, a: 0}
+    fogColor: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.08, g: 0.08, b: 0.08, a: 0}
+    fogColor: {r: 0.078431375, g: 0.078431375, b: 0.078431375, a: 0}
+  - lightIntensityFactor: 0
+    ambientColor: {r: 0.06, g: 0.06, b: 0.06, a: 0}
+    fogColor: {r: 0.05882353, g: 0.05882353, b: 0.05882353, a: 0}
+  currentZone: 0
+  zoneConfigs:
+  - zone: 0
+    isIndoors: 0
+    darkIndoorColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+    zoneObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    zoneVolume: {fileID: 0}
+    environmentSettings:
+      overrideFog: 1
+      fogEnabled: 1
+      fogColor: {r: 0.8235294, g: 0.54509807, b: 0.24705882, a: 1}
+      fogDensity: 0.0015
+      fogStartDistance: 0
+      fogEndDistance: 500
+      overrideSkybox: 0
+      skyboxMaterial: {fileID: 0}
+      overrideReflections: 0
+      reflectionIntensity: 0.2
+  - zone: 1
+    isIndoors: 1
+    darkIndoorColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+    zoneObjects: []
+    zoneVolume: {fileID: 0}
+    environmentSettings:
+      overrideFog: 0
+      fogEnabled: 0
+      fogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      fogDensity: 0.002
+      fogStartDistance: 0
+      fogEndDistance: 1000
+      overrideSkybox: 0
+      skyboxMaterial: {fileID: 0}
+      overrideReflections: 0
+      reflectionIntensity: 0.2
+  - zone: 2
+    isIndoors: 1
+    darkIndoorColor: {r: 0.02, g: 0.02, b: 0.02, a: 1}
+    zoneObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    zoneVolume: {fileID: 0}
+    environmentSettings:
+      overrideFog: 1
+      fogEnabled: 0
+      fogColor: {r: 0.28235295, g: 0.24705882, b: 0.40784314, a: 1}
+      fogDensity: 0.002
+      fogStartDistance: 0
+      fogEndDistance: 400
+      overrideSkybox: 0
+      skyboxMaterial: {fileID: 0}
+      overrideReflections: 0
+      reflectionIntensity: 0.2
+  - zone: 3
+    isIndoors: 0
+    darkIndoorColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+    zoneObjects: []
+    zoneVolume: {fileID: 0}
+    environmentSettings:
+      overrideFog: 1
+      fogEnabled: 0
+      fogColor: {r: 0.8235294, g: 0.54509807, b: 0.24705882, a: 1}
+      fogDensity: 0.001
+      fogStartDistance: 0
+      fogEndDistance: 500
+      overrideSkybox: 0
+      skyboxMaterial: {fileID: 0}
+      overrideReflections: 0
+      reflectionIntensity: 0.2
+  outdoorAmbientMode: 0
+  giUpdateInterval: 1
+--- !u!114 &7288489640683123848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570982674700055420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e648bd481ef8c454f8fce0c2eb9afdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPlacementManager
+  playerCamera: {fileID: 0}
+  placeDistance: 6
+  surfaceLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  heightOffset: 1
+  placeKeyPref: Key_Place
+  defaultPlaceKey: 324
+  shootKeyPref: Key_Shoot
+  defaultShootKey: 323
+  aimKeyPref: Key_Aim
+  defaultAimKey: 324
+  placeablePrefabs:
+  - {fileID: 3874723516286856978, guid: 60225a772e91661419d54480deab3ee7, type: 3}
+  - {fileID: 2707705703978485277, guid: b2716fafe7b204145917246d6631bdd2, type: 3}
+  - {fileID: 258148080423351996, guid: 170bbf0a83af355498d4f05e60d949ca, type: 3}
+  - {fileID: 6124661805870657180, guid: a5be67cf92fd9114698e050301e8a978, type: 3}
+  - {fileID: 8071244898247348890, guid: b1adca53bd4758d48b39ceb67314d65d, type: 3}
+  - {fileID: 6291975231098095320, guid: f334198bfec929b40892003822c1c6cc, type: 3}
+  validPreviewMaterial: {fileID: 2100000, guid: 87cefdc82bb0d7f4dbcce377bd567c04, type: 2}
+  invalidPreviewMaterial: {fileID: 2100000, guid: ef8ba887fece30a45af4d29ff776183d, type: 2}
+  distantSnapPreviewMaterial: {fileID: 2100000, guid: c3b594910b3a90241b809e9f52c8284d, type: 2}
+--- !u!114 &4091404976894357281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570982674700055420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21624af5e21cebb48bf7e725999fec5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  dialoguePanel: {fileID: 0}
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  optionsParent: {fileID: 0}
+  optionButtonPrefab: {fileID: 5110496022139460430, guid: 406e843edf7fdbd4fb83b10963abf044, type: 3}
+  typingSpeed: 0.03
+  blipFrequency: 2
+  audioSource: {fileID: 0}
+  isDialogueActive: 0
+--- !u!114 &181974103766081477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570982674700055420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b736f8147d2d64abd42375b630b4a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmbientManager
+  audioSourceA: {fileID: 0}
+  audioSourceB: {fileID: 0}
+  musicMixerGroup: {fileID: -7964429663915698800, guid: 779f9ab709292ac4887935ec246798c8, type: 2}
+  fadeDuration: 2
+  masterAmbientVolume: 1
+  defaultAmbientClip: {fileID: 8300000, guid: 9a6e4aecc2cfe5c468dbe1d311a85cbc, type: 3}
+  defaultAmbientVolume: 0.5
+  zoneAmbients:
+  - zone: 0
+    ambientClip: {fileID: 8300000, guid: 9a6e4aecc2cfe5c468dbe1d311a85cbc, type: 3}
+    volume: 1
+  - zone: 1
+    ambientClip: {fileID: 0}
+    volume: 0
+  - zone: 2
+    ambientClip: {fileID: 0}
+    volume: 0
