@@ -36,7 +36,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject tooltipPanel;
     public TextMeshProUGUI tooltipText;
     public TextMeshProUGUI coinsText;
-    
+
     [Header("Слоты")]
     public InventorySlot[] hotbarSlots;
     public InventorySlot[] inventorySlots;
@@ -46,6 +46,8 @@ public class InventoryManager : MonoBehaviour
     public RectTransform hotbarPanel;
     public KeyCode toggleHotbarKey = KeyCode.N;
     public float slideSpeed = 8f;
+    [Tooltip("Дополнительные элементы UI/HUD, скрываемые по клавише N вместе с хотбаром")]
+    public GameObject[] extraHUDObjectsToHide;
 
     [Header("Настройки UI")]
     public float invPosY = 20f;
@@ -93,7 +95,6 @@ public class InventoryManager : MonoBehaviour
     [Tooltip("Ссылка на объект контекстного меню в инвентаре")]
     public InventoryContextMenu contextMenu;
 
-    // Исходная позиция WaistSlots, заданная в Editor (запоминается в Start)
     private Vector2 waistSlotsRestPos;
 
     [Header("Локализация")] 
@@ -110,7 +111,6 @@ public class InventoryManager : MonoBehaviour
         if (inventoryUI != null) inventoryUI.SetActive(false);
         if (tooltipPanel != null) tooltipPanel.SetActive(false);
 
-        // Всегда ищем инстанс на сцене, чтобы избежать случайных ссылок на префабы из инспектора
         var sceneContextMenu = FindFirstObjectByType<InventoryContextMenu>(FindObjectsInactive.Include);
         if (sceneContextMenu != null)
         {
@@ -128,7 +128,6 @@ public class InventoryManager : MonoBehaviour
             hotbarPanel.anchoredPosition = new Vector2(baseHotbarX, hudPosY);
         }
 
-        // Запоминаем позицию WaistSlots из Editor, потом скрываем
         if (waistSlotsContainer != null)
         {
             waistSlotsRestPos = waistSlotsContainer.anchoredPosition;
@@ -152,9 +151,9 @@ public class InventoryManager : MonoBehaviour
         if (!isOpen)
         {
             HandleHotbarInput();
-            
+
             if (Input.GetKeyDown(KeyCode.G)) DropEquippedItem();
-            if (Input.GetKeyDown(KeyCode.N)) ToggleHotbarHUD();
+            if (Input.GetKeyDown(toggleHotbarKey)) ToggleHotbarHUD();
 
             KeyCode useKey = (KeyCode)PlayerPrefs.GetInt("Key_Aim", (int)KeyCode.Mouse1);
             if (Input.GetKeyDown(useKey)) TryUseEquippedItem();
@@ -169,7 +168,7 @@ public class InventoryManager : MonoBehaviour
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, parentCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : parentCanvas.worldCamera, out movePos);
                 tooltipPanel.GetComponent<RectTransform>().localPosition = movePos + new Vector2(20f, -20f);
             }
-            
+
             if (Input.GetKeyDown(KeyCode.G))
             {
                 if (InventorySlot.hoveredSlot != null && !InventorySlot.hoveredSlot.IsEmpty())
@@ -192,14 +191,13 @@ public class InventoryManager : MonoBehaviour
     private void TryUseEquippedItem()
     {
         if (hotbarSlots == null || selectedSlotIndex < 0 || selectedSlotIndex >= hotbarSlots.Length) return;
-        
+
         InventorySlot activeSlot = hotbarSlots[selectedSlotIndex];
-        
+
         if (!activeSlot.IsEmpty() && activeSlot.itemData != null && activeSlot.itemData.isConsumable)
         {
             InventoryItemData data = activeSlot.itemData; 
 
-            // ПКМ использование питья отключено (пьем через контекстное меню)
             if (data.consumableType == ConsumableType.LiquidContainer) return;
 
             if (data.currentAmount <= 0)
@@ -323,9 +321,9 @@ public class InventoryManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            
+
             InventorySlot.hoveredSlot = null;
-            
+
             HideTooltip(); 
             if (EquipmentManager.Instance != null) EquipmentManager.Instance.SetWeaponVisibility(true);
             if (hotbarPanel != null)
@@ -333,6 +331,14 @@ public class InventoryManager : MonoBehaviour
                 float targetY = isHotbarVisibleOnHUD ? hudPosY : hiddenPosY;
                 hotbarPanel.anchoredPosition = new Vector2(baseHotbarX, targetY);
                 hotbarPanel.localScale = new Vector3(hudScale, hudScale, 1f);
+            }
+
+            if (extraHUDObjectsToHide != null)
+            {
+                foreach (var obj in extraHUDObjectsToHide)
+                {
+                    if (obj != null) obj.SetActive(isHotbarVisibleOnHUD);
+                }
             }
         }
     }
@@ -361,12 +367,22 @@ public class InventoryManager : MonoBehaviour
 
     private void ToggleHotbarHUD()
     {
-        if (hotbarPanel == null) return;
         isHotbarVisibleOnHUD = !isHotbarVisibleOnHUD;
         float targetY = isHotbarVisibleOnHUD ? hudPosY : hiddenPosY;
-        
-        hotbarPanel.anchoredPosition = new Vector2(baseHotbarX, targetY);
-        hotbarPanel.localScale = new Vector3(hudScale, hudScale, 1f);
+
+        if (hotbarPanel != null)
+        {
+            hotbarPanel.anchoredPosition = new Vector2(baseHotbarX, targetY);
+            hotbarPanel.localScale = new Vector3(hudScale, hudScale, 1f);
+        }
+
+        if (extraHUDObjectsToHide != null)
+        {
+            foreach (var obj in extraHUDObjectsToHide)
+            {
+                if (obj != null) obj.SetActive(isHotbarVisibleOnHUD);
+            }
+        }
     }
 
     public void HaltHotbarAnimation()
@@ -416,13 +432,11 @@ public class InventoryManager : MonoBehaviour
         if (EquipmentManager.Instance != null) EquipmentManager.Instance.EquipItem(id);
         if (equippedItemNameText != null) equippedItemNameText.text = itemName;
 
-        // Если экипируем лампу — передаём прямую ссылку на слот в LanternController
         if (IsLanternItem(id) && selectedSlot.itemData != null)
         {
             LanternController lantern = null;
             if (EquipmentManager.Instance != null)
             {
-                // Ищем среди зарегистрированного оружия именно то, которое сейчас активно
                 foreach (var weapon in EquipmentManager.Instance.weapons)
                 {
                     if (weapon.weaponObject != null && weapon.weaponObject.activeSelf)
@@ -477,7 +491,6 @@ public class InventoryManager : MonoBehaviour
 
         InventoryItemData dataToDrop = slotToDrop.itemData.Clone();
         dataToDrop.amount = dropAmount;
-        // Если выкинули только часть стака, то забираем сначала изношенный предмет (сначала выкидываем изношенный)
         if (dropAmount < slotToDrop.itemData.amount)
         {
             if (dataToDrop.lanternFuel >= 0f)
@@ -494,7 +507,7 @@ public class InventoryManager : MonoBehaviour
         {
             slotToDrop.ClearSlot();
             HideTooltip();
-            
+
             if (hotbarSlots != null && selectedSlotIndex >= 0 && selectedSlotIndex < hotbarSlots.Length)
             {
                 if (slotToDrop == hotbarSlots[selectedSlotIndex])
@@ -524,23 +537,20 @@ public class InventoryManager : MonoBehaviour
             dropEulerAngles.x = 0f; 
             dropEulerAngles.z = 0f; 
             dropEulerAngles.y += 90f; 
-            
+
             GameObject spawnedItem = Instantiate(prefabToDrop, spawnPos, Quaternion.Euler(dropEulerAngles));
-            
+
             // --- ИСПРАВЛЕНИЕ: Имя класса с большой буквы U ---
             PickUpItem pickupComponent = spawnedItem.GetComponent<PickUpItem>();
             if (pickupComponent == null) pickupComponent = spawnedItem.GetComponentInChildren<PickUpItem>();
-            
+
             if (pickupComponent != null)
             {
                 pickupComponent.RestoreData(data);
                 pickupComponent.Toss(mainCam.transform.forward, dropForce);
             }
         }
-        else
-        {
-            Debug.LogWarning("Не найден префаб с ID " + data.itemID + " в All Items Database!");
-        }
+        
     }
 
     private void QuickTransferItem(InventorySlot sourceSlot)
@@ -564,7 +574,7 @@ public class InventoryManager : MonoBehaviour
         if (dataToMove.isStackable)
         {
             amountLeft = AddToExistingStacks(dataToMove, amountLeft, targetArray);
-            
+
             if (amountLeft > 0 && !isFromHotbar && !isFromInventory) 
             {
                 amountLeft = AddToExistingStacks(dataToMove, amountLeft, inventorySlots);
@@ -575,7 +585,7 @@ public class InventoryManager : MonoBehaviour
         {
             dataToMove.amount = amountLeft;
             amountLeft = MoveDataToFirstEmptySlot(dataToMove, targetArray);
-            
+
             if (amountLeft > 0 && !isFromHotbar && !isFromInventory)
             {
                 amountLeft = MoveDataToFirstEmptySlot(dataToMove, inventorySlots);
@@ -698,7 +708,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     slots[i].itemData.amount += amountToAdd;
                     slots[i].UpdateSlotUI();
-                    
+
                     if (slots == hotbarSlots && i == selectedSlotIndex) EquipItem(slots[i]);
                     return 0; 
                 }
@@ -734,12 +744,10 @@ public class InventoryManager : MonoBehaviour
     }
 
     // =========================================================
-    //  СИСТЕМА РЕМНЯ (ПОЯС / WAIST)
     // =========================================================
 
     /// <summary>
-    /// Вызывается при изменении предмета в waistSlot.
-    /// Разблокирует/блокирует крючки и запускает анимацию выезда/скрытия.
+    /// Вызывается при изменении предмета в waistSlot
     /// </summary>
     public void RefreshWaistSlots()
     {
@@ -786,7 +794,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // Блокируем/разблокируем крючки, выбрасываем предметы из закрытых
         for (int i = 0; i < waistSlots.Length; i++)
         {
             InventorySlot slot = waistSlots[i];
@@ -808,14 +815,12 @@ public class InventoryManager : MonoBehaviour
     private Coroutine waistSlideCoroutine;
 
     /// <summary>
-    /// Анимация выезда/скрытия контейнера WaistSlots из-под CB_Waist.
-    /// Слайдит по оси X (выезжает вправо).
+    /// Анимация выезда/скрытия контейнера WaistSlots и...
     /// </summary>
     private IEnumerator AnimateWaistSlots(bool slideIn)
     {
         if (waistSlotsContainer == null) yield break;
 
-        // Восстанавливаем позицию, чтобы она всегда была правильной
         waistSlotsContainer.anchoredPosition = waistSlotsRestPos;
 
         Vector3 startScale = slideIn ? new Vector3(0f, 1f, 1f) : waistSlotsContainer.localScale;
@@ -840,7 +845,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Вспомогательный метод: кладёт предмет в первый свободный незаблокированный слот массива.
+    /// Вспомогательный метод: кладёт предмет в первый ...
     /// </summary>
     private int MoveDataToFirstFreeUnlockedSlot(InventoryItemData data, InventorySlot[] slots)
     {
@@ -858,13 +863,11 @@ public class InventoryManager : MonoBehaviour
     }
 
     // =========================================================
-    //  СИСТЕМА РЮКЗАКА (BACKPACK)
+    // СИСТЕМА РЮКЗАКА (BACKPACK)
     // =========================================================
 
     /// <summary>
-    /// Обновляет доступность слотов инвентаря в зависимости от рюкзака в backpackSlot.
-    /// Слоты не отключаются (Grid Layout Group остаётся ровным),
-    /// а запираются/отпираются. Предметы в заблокированных слотах не удаляются.
+    /// Обновляет доступность слотов инвентаря в зависи...
     /// </summary>
     public void RefreshInventorySlots()
     {
@@ -893,7 +896,6 @@ public class InventoryManager : MonoBehaviour
         }
 
         applySlots:
-        // Сначала собираем предметы из слотов, которые станут недоступными
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -913,8 +915,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Пытается добавить предмет в существующие стаки в пределах доступных слотов.
-    /// Возвращает количество, которое не удалось разместить.
+    /// Пытается добавить предмет в существующие стаки ...
     /// </summary>
     private int TryMergeIntoAccessibleSlots(InventoryItemData data, int amount, int maxIndex)
     {
@@ -941,8 +942,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Пытается положить предмет в первый свободный слот в пределах доступных слотов.
-    /// Возвращает количество, которое не удалось разместить (0 = успех).
+    /// Пытается положить предмет в первый свободный сл...
     /// </summary>
     private int TryMoveToFirstFreeAccessibleSlot(InventoryItemData data, int maxIndex)
     {
@@ -959,7 +959,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Блокирует слот и безопасно выталкивает из него предмет в инвентарь или на землю.
+    /// Блокирует слот и безопасно выталкивает из него ...
     /// </summary>
     public void LockAndEvictSlot(InventorySlot slotToLock)
     {
@@ -968,9 +968,6 @@ public class InventoryManager : MonoBehaviour
         bool wasLocked = slotToLock.isLocked;
         bool hasItemToEvict = !slotToLock.isEmpty && slotToLock.itemData != null;
 
-        // Блокируем слот ДО того, как начнем выталкивать предметы.
-        // Иначе функция поиска свободного места найдет этот же самый 
-        // только что очищенный слот и положит предмет обратно в него!
         slotToLock.SetLockedKeepItems(true);
 
         if (!wasLocked && hasItemToEvict)
@@ -1009,7 +1006,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Обновляет связанный слот (разблокирует, если есть предмет, иначе блокирует и выталкивает).
+    /// Обновляет связанный слот (разблокирует, если ес...
     /// </summary>
     public void RefreshLinkedSlot(InventorySlot sourceSlot)
     {
@@ -1037,8 +1034,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Проверяет, является ли источник света (фонарь, свеча) попользованным (изношенным).
-    /// Попользованные источники света с разной прочностью не должны стакаться.
+    /// Проверяет, является ли источник света (фонарь, ...
     /// </summary>
     public static bool IsUsedLightSource(InventoryItemData item)
     {
@@ -1053,7 +1049,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Проверяет, могут ли указанные предметы поместиться в инвентарь игрока.
+    /// Проверяет, могут ли указанные предметы поместит...
     /// </summary>
     public bool CanFitItems(List<DispenseItemConfig> items)
     {
@@ -1093,7 +1089,7 @@ public class InventoryManager : MonoBehaviour
         {
             GameObject prefab = GetPrefabByID(item.itemID);
             if (prefab == null) continue;
-            
+
             PickUpItem pickup = prefab.GetComponent<PickUpItem>();
             if (pickup == null)
             {
@@ -1159,7 +1155,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject GetPrefabByID(int id)
     {
         if (allItemsDatabase == null) return null;
-        
+
         foreach (GameObject obj in allItemsDatabase)
         {
             if (obj != null)
@@ -1279,7 +1275,7 @@ public class InventoryManager : MonoBehaviour
     public int GetItemCountWithLiquid(int itemID, bool requiresLiquid, LiquidType liquidType)
     {
         int count = 0;
-        
+
         System.Action<InventorySlot> checkSlot = (slot) =>
         {
             if (slot != null && !slot.IsEmpty() && slot.itemData != null)
@@ -1439,7 +1435,7 @@ public class InventoryManager : MonoBehaviour
                     if (requiresLiquid)
                     {
                         int containersToEmpty = Mathf.Min(remainingToRemove, slot.itemData.amount);
-                        
+
                         if (slot.itemData.amount == 1)
                         {
                             EmptyLiquidFromItem(slot.itemData);
@@ -1450,7 +1446,7 @@ public class InventoryManager : MonoBehaviour
                         {
                             slot.itemData.amount -= containersToEmpty;
                             slot.UpdateSlotUI();
-                            
+
                             for (int i = 0; i < containersToEmpty; i++)
                             {
                                 GameObject emptyPrefab = GetPrefabByID(slot.itemData.itemID);
@@ -1463,7 +1459,7 @@ public class InventoryManager : MonoBehaviour
                                         InventoryItemData emptyData = new InventoryItemData(p);
                                         emptyData.amount = 1;
                                         EmptyLiquidFromItem(emptyData);
-                                        
+
                                         int leftover = AddItemWithLeftover(emptyData);
                                         if (leftover > 0)
                                         {

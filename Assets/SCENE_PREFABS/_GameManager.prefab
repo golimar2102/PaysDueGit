@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6113486725605017955}
+  - component: {fileID: 4072472995323889569}
   - component: {fileID: 439613482353337422}
   - component: {fileID: 6999424485558691306}
   - component: {fileID: 7288489640683123848}
@@ -36,6 +37,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4072472995323889569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570982674700055420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81bd19f69a68a63459a768ed57888023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneOptimizationManager
+  zones:
+  - zone: 0
+    subZones: 03000000
+    zoneRootObject: {fileID: 0}
+    isAlwaysActive: 0
+  - zone: 1
+    subZones: 
+    zoneRootObject: {fileID: 0}
+    isAlwaysActive: 0
+  - zone: 2
+    subZones: 
+    zoneRootObject: {fileID: 0}
+    isAlwaysActive: 0
+  - zone: 4
+    subZones: 
+    zoneRootObject: {fileID: 0}
+    isAlwaysActive: 0
+  - zone: 5
+    subZones: 
+    zoneRootObject: {fileID: 0}
+    isAlwaysActive: 0
+  enableDebugLogs: 1
 --- !u!114 &439613482353337422
 MonoBehaviour:
   m_ObjectHideFlags: 0

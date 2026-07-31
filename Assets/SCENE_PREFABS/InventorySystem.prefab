@@ -90,6 +90,7 @@ MonoBehaviour:
   equippedItemNameText: {fileID: 0}
   tooltipPanel: {fileID: 0}
   tooltipText: {fileID: 0}
+  coinsText: {fileID: 0}
   hotbarSlots:
   - {fileID: 0}
   - {fileID: 0}
@@ -126,6 +127,14 @@ MonoBehaviour:
   hotbarPanel: {fileID: 0}
   toggleHotbarKey: 110
   slideSpeed: 8
+  extraHUDObjectsToHide:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   invPosY: -115.5
   invScale: 1
   hudPosY: -200

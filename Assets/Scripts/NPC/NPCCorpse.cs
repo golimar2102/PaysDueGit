@@ -79,30 +79,45 @@ public class NPCCorpse : MonoBehaviour
     private Outline outline;
     private Vector3 originalScale;
 
-    // Инициализация при переходе в состояние трупа
+    private Vector3 GetSafeDeadColliderCenter()
+    {
+        Vector3 center = deadColliderCenter;
+        if (deadColliderDirection == 0 || deadColliderDirection == 2)
+        {
+            float minCenterY = deadColliderRadius;
+            if (center.y < minCenterY)
+            {
+                center.y = minCenterY;
+            }
+        }
+        return center;
+    }
+
     public void InitializeCorpse()
     {
         colliders = GetComponentsInChildren<Collider>(true);
         rb = GetComponent<Rigidbody>();
         if (rb == null) rb = gameObject.AddComponent<Rigidbody>();
         rb.isKinematic = true; 
-        
+
         deathEffects = GetComponent<EnemyDeathEffects>();
         outline = GetComponent<Outline>();
         if (outline != null) outline.enabled = false;
 
-        // Скрываем дополнительные модели для оптимизации
         SetExtraButcheringModelsActive(false);
 
-        // Поворачиваем коллайдер лежачего трупа
-        if (adjustColliderOnDeath)
+        EnemyAI enemyAI = GetComponent<EnemyAI>();
+        bool isDeadOrStunned = enemyAI == null || enemyAI.currentState == EnemyAI.NPCState.Dead || enemyAI.currentState == EnemyAI.NPCState.Stunned;
+
+        // Поворачиваем коллайдер лежачего трупа ТОЛЬКО если мертв или оглушен
+        if (adjustColliderOnDeath && isDeadOrStunned)
         {
             CapsuleCollider capsule = GetComponent<CapsuleCollider>();
             if (capsule == null) capsule = GetComponentInChildren<CapsuleCollider>();
             if (capsule != null)
             {
                 capsule.direction = deadColliderDirection;
-                capsule.center = deadColliderCenter;
+                capsule.center = GetSafeDeadColliderCenter();
                 capsule.height = deadColliderHeight;
                 capsule.radius = deadColliderRadius;
             }
@@ -111,7 +126,6 @@ public class NPCCorpse : MonoBehaviour
 
     void Start()
     {
-        // Если компонент уже висел на сцене/префабе, делаем первичный поиск
         colliders = GetComponentsInChildren<Collider>(true);
         rb = GetComponent<Rigidbody>();
         deathEffects = GetComponent<EnemyDeathEffects>();
@@ -132,8 +146,12 @@ public class NPCCorpse : MonoBehaviour
 
     void LateUpdate()
     {
-        // Поддерживаем правильный вес блендшейпа в соответствии с состоянием разделки,
-        // только если труп НЕ на столе (на столе этим управляет ButcheringTableController)
+        EnemyAI enemyAI = GetComponent<EnemyAI>();
+        if (enemyAI != null && enemyAI.currentState != EnemyAI.NPCState.Dead && enemyAI.currentState != EnemyAI.NPCState.Stunned)
+        {
+            return;
+        }
+
         if (currentTable == null)
         {
             if (isChestSpread || isButchered)
@@ -152,22 +170,26 @@ public class NPCCorpse : MonoBehaviour
                 SetBlendShapeWeight("TorsoOpen", 0f);
             }
 
-            // Принудительно удерживаем центр коллайдера на 0.5f по Y на полу/в руках (после кадра аниматора)
             CapsuleCollider capsule = GetComponent<CapsuleCollider>();
             if (capsule == null) capsule = GetComponentInChildren<CapsuleCollider>();
             if (capsule != null)
             {
-                capsule.center = new Vector3(capsule.center.x, 0.5f, capsule.center.z);
+                capsule.direction = deadColliderDirection;
+                capsule.center = GetSafeDeadColliderCenter();
+                capsule.height = deadColliderHeight;
+                capsule.radius = deadColliderRadius;
             }
         }
         else
         {
-            // На столе удерживаем оригинальный центр
             CapsuleCollider capsule = GetComponent<CapsuleCollider>();
             if (capsule == null) capsule = GetComponentInChildren<CapsuleCollider>();
             if (capsule != null)
             {
-                capsule.center = deadColliderCenter;
+                capsule.direction = deadColliderDirection;
+                capsule.center = GetSafeDeadColliderCenter();
+                capsule.height = deadColliderHeight;
+                capsule.radius = deadColliderRadius;
             }
         }
     }
@@ -182,7 +204,6 @@ public class NPCCorpse : MonoBehaviour
         if (carriedCorpse != null) return;
         carriedCorpse = this;
 
-        // Прячем всё оружие из рук
         if (EquipmentManager.Instance != null)
         {
             EquipmentManager.Instance.UnequipAll();
@@ -217,7 +238,7 @@ public class NPCCorpse : MonoBehaviour
         rb.useGravity = false;
 
         SetCollidersTriggerState(true);
-        SetCollidersEnabled(false); // Полностью отключаем, чтобы не мешал камере и лучам
+        SetCollidersEnabled(false);
     }
 
     public void Drop()
@@ -228,8 +249,19 @@ public class NPCCorpse : MonoBehaviour
         transform.SetParent(originalParent);
         transform.localScale = originalScale;
 
-        // Выравниваем ротейшн горизонтально, сохраняя текущее направление взгляда
         transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+
+        // Гарантируем спавн над землей/террейном
+        Vector3 currentPos = transform.position;
+        if (Physics.Raycast(currentPos + Vector3.up * 1.5f, Vector3.down, out RaycastHit groundHit, 5.0f, ~0, QueryTriggerInteraction.Ignore))
+        {
+            float minSafeY = groundHit.point.y + 0.4f;
+            if (currentPos.y < minSafeY)
+            {
+                currentPos.y = minSafeY;
+                transform.position = currentPos;
+            }
+        }
 
         // Запускаем таймер исчезновения заново
         if (deathEffects != null)
@@ -237,27 +269,27 @@ public class NPCCorpse : MonoBehaviour
             deathEffects.PauseCorpseLifetime(false);
         }
 
-        // 1. Включаем коллайдеры сначала, чтобы они были активны для физического игнорирования
         SetCollidersEnabled(true);
         SetCollidersTriggerState(false);
 
-        // Настраиваем центр капсульного коллайдера на -0.5 по Y при выбрасывании
         CapsuleCollider capsule = GetComponent<CapsuleCollider>();
         if (capsule == null) capsule = GetComponentInChildren<CapsuleCollider>();
         if (capsule != null)
         {
-            capsule.center = new Vector3(capsule.center.x, -0.5f, capsule.center.z);
+            capsule.direction = deadColliderDirection;
+            capsule.center = GetSafeDeadColliderCenter();
+            capsule.height = deadColliderHeight;
+            capsule.radius = deadColliderRadius;
         }
 
-        // 2. Игнорируем столкновения с игроком и другими NPC (вызываем после включения коллайдеров!)
         IgnorePlayerAndNPCObjects(true);
 
-        // 3. Выбрасываем как мешок с картошкой (делаем динамическим ПОСЛЕ настройки игнорирования)
         rb.isKinematic = false;
         rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.FreezeRotation; // Блокируем кручение, чтобы не катился
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
 
-        // Надежно находим игрока и камеру
         GameObject player = null;
         Camera cam = null;
         if (PlayerInteract.Instance != null)
@@ -276,23 +308,17 @@ public class NPCCorpse : MonoBehaviour
 
         if (player != null && cam != null)
         {
-            // Сбрасываем текущую скорость для точного броска
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.linearDamping = 0f; // Убираем сопротивление воздуха
 
-            // Применяем импульс броска на основе настроек в инспекторе (VelocityChange игнорирует массу)
             Vector3 forceDirection = cam.transform.forward * throwForwardForce + Vector3.up * throwUpwardForce;
             rb.AddForce(forceDirection, ForceMode.VelocityChange);
         }
-        else
-        {
-            Debug.LogWarning("[NPCCorpse] Не удалось найти Игрока или Камеру для броска тела.");
-        }
+        
 
         StartCoroutine(WaitForLanding());
 
-        // Отложенное обнуление ссылки в конце кадра
         StartCoroutine(ClearCarriedCorpseAtEndOfFrame());
     }
 
@@ -307,11 +333,24 @@ public class NPCCorpse : MonoBehaviour
 
     private IEnumerator WaitForLanding()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
 
-        // Ждем остановки
-        while (rb != null && rb.linearVelocity.sqrMagnitude > 0.05f)
+        float timeout = 5f;
+        float elapsed = 0f;
+
+        // Ждем пока тело реально приземлится и остановится
+        while (rb != null && elapsed < timeout)
         {
+            elapsed += Time.deltaTime;
+
+            bool isNearGround = Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, out RaycastHit hit, 0.8f, ~0, QueryTriggerInteraction.Ignore);
+            bool isSlow = rb.linearVelocity.sqrMagnitude < 0.1f;
+
+            if (isNearGround && isSlow)
+            {
+                break;
+            }
+
             yield return null;
         }
 
@@ -321,7 +360,6 @@ public class NPCCorpse : MonoBehaviour
             rb.useGravity = false;
         }
 
-        // Делаем триггером, чтобы игрок мог ходить сквозь него
         SetCollidersTriggerState(true);
 
         // Возвращаем физические столкновения
@@ -389,7 +427,6 @@ public class NPCCorpse : MonoBehaviour
             {
                 if (col == null) continue;
 
-                // Явно игнорируем CharacterController игрока, так как GetComponentsInChildren<Collider> может его не вернуть
                 if (playerCC != null)
                 {
                     Physics.IgnoreCollision(col, playerCC, ignore);
@@ -434,7 +471,6 @@ public class NPCCorpse : MonoBehaviour
 
     public void SetExtraButcheringModelsActive(bool active)
     {
-        // 1. Управляем мешами из инспектора (если назначены вручную)
         if (extraButcheringModels != null)
         {
             foreach (var m in extraButcheringModels)
@@ -446,7 +482,6 @@ public class NPCCorpse : MonoBehaviour
             }
         }
 
-        // 2. Автоматический поиск TorsoInside по имени в дочерних объектах
         Transform torsoInside = FindChildRecursive(transform, "TorsoInside");
         if (torsoInside != null)
         {
@@ -468,7 +503,6 @@ public class NPCCorpse : MonoBehaviour
 
     public void SetBlendShapeWeight(string shapeName, float weight)
     {
-        // 1. Сначала пробуем найти именно в меше TorsoBody
         Transform torsoBody = FindChildRecursive(transform, "TorsoBody");
         if (torsoBody != null)
         {
@@ -484,13 +518,12 @@ public class NPCCorpse : MonoBehaviour
                         nameInMesh.EndsWith("_" + shapeName, System.StringComparison.OrdinalIgnoreCase))
                     {
                         smr.SetBlendShapeWeight(i, weight);
-                        return; // Нашли в конкретном меше, выходим
+                        return;
                     }
                 }
             }
         }
 
-        // 2. Если в TorsoBody не нашли, ищем по всем остальным мешам (резервный вариант)
         SkinnedMeshRenderer[] renderers = GetComponentsInChildren<SkinnedMeshRenderer>(true);
         foreach (var smr in renderers)
         {

@@ -6464,6 +6464,9 @@ MonoBehaviour:
   ingredientsContainer: {fileID: 1386252610208086874}
   ingredientSlotPrefab: {fileID: 5046113519025488400, guid: 3b5abe30b1c23ef45ba43f3c0f68020e, type: 3}
   craftButton: {fileID: 0}
+  plusButton: {fileID: 0}
+  minusButton: {fileID: 0}
+  craftAmountText: {fileID: 0}
   craftSuccessSound: {fileID: 0}
   craftFailSound: {fileID: 0}
   itemIconTransform: {fileID: 3282598493302403161}
@@ -19624,8 +19627,8 @@ MonoBehaviour:
   staminaRegenRate: 15
   staminaRegenDelay: 1
   staminaFill: {fileID: 829012532712910788}
-  maxSanity: 999
-  currentSanity: 999
+  maxSanity: 100
+  currentSanity: 100
   sanityFill: {fileID: 5085617767633782205}
   sanityDecayRateLight: 0.05
   sanityDecayRateDark: 0.5
@@ -19646,7 +19649,10 @@ MonoBehaviour:
   starvationTickRate: 2
   dehydrationDamage: 3
   dehydrationTickRate: 2
+  karma: 0
   playerName: 
+  coins: 100
+  coinsText: {fileID: 0}
 --- !u!114 &3722500462509601577
 MonoBehaviour:
   m_ObjectHideFlags: 0

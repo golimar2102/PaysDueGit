@@ -32,6 +32,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: HUBSky
+    second: {fileID: 2100000, guid: e83c69f1162314b4883aa37ff4810675, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: HUBTileFloor
     second: {fileID: 2100000, guid: 4d7bd41df1a209740a72db918de9775e, type: 2}
   - first:
@@ -84,6 +89,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: PortalFarm
     second: {fileID: 2100000, guid: b9ee65b603a15d94ba1800ed1055fa71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PortalFarm.001
+    second: {fileID: 2100000, guid: c6a088faefa40b4489829f9211d9f101, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

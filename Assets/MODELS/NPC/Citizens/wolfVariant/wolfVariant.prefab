@@ -321,6 +321,7 @@ MonoBehaviour:
   hungerDepletionPerDay: 25
   isReadyToBreed: 0
   breedCooldown: 30
+  breedingDuration: 2.5
   breedApproachDistance: 1.2
   heartParticlePrefab: {fileID: 0}
   breedPartner: {fileID: 0}
@@ -345,6 +346,8 @@ MonoBehaviour:
   stunRecoveryRate: 5
   currentSlaveryRoom: {fileID: 0}
   escapeState: 0
+  isBackgroundEscaping: 0
+  backgroundEscapeStartTime: 0
   maxStamina: 100
   staminaRegenRate: 12
   staminaRegenDelay: 2
@@ -387,6 +390,7 @@ MonoBehaviour:
   friendlyFireReaction: 1
   currentTarget: {fileID: 0}
   currentStamina: 0
+  slaveryWanderRadius: 1.5
 --- !u!136 &9176824476348175733
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -402,7 +406,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -140,7 +140,6 @@ public partial class PlayerInteract : MonoBehaviour
         data.currentAmount += added;
         data.currentLiquidType = source.liquidType;
 
-        // Update item name to include the liquid suffix (e.g. "Бутылка (Кровь)" / "Vessel (Blood)")
         if (string.IsNullOrEmpty(data.baseItemName))
         {
             data.baseItemName = data.itemName;
@@ -149,7 +148,6 @@ public partial class PlayerInteract : MonoBehaviour
         string liquidSuffix = GetLocalizedLiquidName(source.liquidType);
         data.itemName = $"{data.baseItemName} ({liquidSuffix})";
 
-        // Update fill icons from the item prefab's mappings
         if (InventoryManager.Instance != null)
         {
             GameObject prefab = InventoryManager.Instance.GetPrefabByID(data.itemID);
@@ -164,7 +162,6 @@ public partial class PlayerInteract : MonoBehaviour
             }
         }
 
-        // Select the correct fill icon based on percentage filled
         if (data.fillIcons != null && data.fillIcons.Length > 0)
         {
             float fillPercentage = Mathf.Clamp01((float)data.currentAmount / data.maxAmount);
@@ -172,10 +169,8 @@ public partial class PlayerInteract : MonoBehaviour
             data.itemIcon = data.fillIcons[iconIndex];
         }
 
-        // Refresh UI
         slot.UpdateSlotUI();
 
-        // Play sound if any
         if (source.pourSound != null)
         {
             source.pourSound.Play();
@@ -299,7 +294,7 @@ public partial class PlayerInteract : MonoBehaviour
             if (InventorySlot.hoveredSlot != null && !InventorySlot.hoveredSlot.isLocked)
             {
                 InventorySlot targetSlot = InventorySlot.hoveredSlot;
-                
+
                 if (generator != null && targetSlot.AcceptsItem(generator.installedCanisterData))
                 {
                     if (targetSlot.isEmpty)
@@ -326,10 +321,7 @@ public partial class PlayerInteract : MonoBehaviour
                 {
                     pipe.ExtractCanister();
                 }
-                else
-                {
-                    Debug.LogWarning("Инвентарь полон!");
-                }
+                
             }
         }
     }
@@ -393,7 +385,7 @@ public partial class PlayerInteract : MonoBehaviour
             if (InventorySlot.hoveredSlot != null && !InventorySlot.hoveredSlot.isLocked)
             {
                 InventorySlot targetSlot = InventorySlot.hoveredSlot;
-                
+
                 if (targetSlot.AcceptsItem(holder.installedFuseData))
                 {
                     if (targetSlot.isEmpty)
@@ -420,10 +412,7 @@ public partial class PlayerInteract : MonoBehaviour
                 {
                     holder.ExtractFuse();
                 }
-                else
-                {
-                    Debug.LogWarning("Инвентарь полон!");
-                }
+                
             }
         }
     }
@@ -439,6 +428,12 @@ public partial class PlayerInteract : MonoBehaviour
             {
                 continue;
             }
+            if (h.collider.gameObject == gameObject || 
+                h.collider.transform.IsChildOf(transform) ||
+                h.collider.transform.root == transform.root)
+            {
+                continue;
+            }
             if (h.collider.name.IndexOf("CAMERASPOT", System.StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 continue;
@@ -449,8 +444,6 @@ public partial class PlayerInteract : MonoBehaviour
                 continue;
             }
 
-            // If it is a trigger collider, ensure it has at least one interactable component.
-            // Otherwise, we skip it so it doesn't block interactions behind it (e.g. ambient zone triggers).
             if (h.collider.isTrigger)
             {
                 bool isInteractable = h.collider.GetComponentInParent<PickUpItem>() != null ||
@@ -494,8 +487,7 @@ public partial class PlayerInteract : MonoBehaviour
     }
 
     /// <summary>
-    /// Возвращает локализованное название жидкости, если оно настроено в списке localizedLiquids.
-    /// Иначе возвращает исходное русское/английское название в зависимости от локали.
+    /// Возвращает локализованное название жидкости, ес...
     /// </summary>
     public static string GetLocalizedLiquidName(LiquidType type)
     {

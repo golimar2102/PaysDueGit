@@ -70,7 +70,6 @@ public struct HourLighting
     public Color fogColor;
 }
 
-// [ExecuteAlways]
 public class DayNightCycle : MonoBehaviour
 {
     public static DayNightCycle Instance;
@@ -82,7 +81,6 @@ public class DayNightCycle : MonoBehaviour
 
     private float indoorTransitionT = 0f;
 
-    // Базовые настройки окружения сцены (сохраняются при старте)
     private bool baseFogEnabled;
     private float baseFogDensity;
     private float baseFogStartDistance;
@@ -97,14 +95,14 @@ public class DayNightCycle : MonoBehaviour
     [Tooltip("Текущее время в часах (от 0 до 24)")]
     [Range(0, 24)]
     public float timeOfDay = 12f; 
-    
+
     [Tooltip("Скорость течения времени. 1 = 1 игровой час проходит за 1 реальную секунду")]
     public float timeMultiplier = 0.5f; 
 
     [Header("Освещение")]
     [Tooltip("Направление солнца (для вращения процедурного скайбокса, если используется)")]
     public Transform sunDirectionObject;
-    
+
     [Tooltip("Источники света на улице, яркость которых меняется от времени суток")]
     public Light[] outdoorLights;
 
@@ -205,7 +203,6 @@ public class DayNightCycle : MonoBehaviour
     {
         InitializeBaseIntensities();
 
-        // Сохраняем исходные настройки окружения сцены в качестве базовых (для улицы)
         baseFogEnabled = RenderSettings.fog;
         baseFogDensity = RenderSettings.fogDensity;
         baseFogStartDistance = RenderSettings.fogStartDistance;
@@ -213,11 +210,9 @@ public class DayNightCycle : MonoBehaviour
         baseSkyboxMaterial = RenderSettings.skybox;
         baseReflectionIntensity = RenderSettings.reflectionIntensity;
 
-        // Force the first state check on the next frame/Update run
         lastZone = currentZone;
         wasStateInitialized = false;
 
-        // Устанавливаем мгновенное значение при старте, чтобы избежать медленного затухания в начале игры
         indoorTransitionT = isPlayerIndoors ? 1f : 0f;
 
         ApplyIndoorOutdoorState();
@@ -262,18 +257,17 @@ public class DayNightCycle : MonoBehaviour
     void Update()
     {
         timeOfDay += Time.deltaTime * timeMultiplier;
-        
+
         if (timeOfDay >= 24f)
         {
             timeOfDay %= 24f;
             currentDay++;
-            Debug.Log($"Наступил день {currentDay}!");
+
         }
 
-        // Плавно интерполируем переходной коэффициент для помещений
         float targetT = isPlayerIndoors ? 1f : 0f;
         indoorTransitionT = Mathf.MoveTowards(indoorTransitionT, targetT, Time.deltaTime * transitionSpeed);
-        
+
         bool stateChanged = !wasStateInitialized || (currentZone != lastZone);
         if (stateChanged)
         {
@@ -286,7 +280,7 @@ public class DayNightCycle : MonoBehaviour
         UpdateSunAndLighting(stateChanged);
         UpdateZoneVolumes();
     }
-    
+
     public string GetFormattedTime()
     {
         int hours = Mathf.FloorToInt(timeOfDay);
@@ -355,24 +349,25 @@ public class DayNightCycle : MonoBehaviour
     {
         if (currentZone == newZone) return;
         currentZone = newZone;
+        lastZone = newZone;
+        wasStateInitialized = true;
         ApplyIndoorOutdoorState();
+        OnZoneChanged?.Invoke(currentZone);
     }
 
     private void ApplyIndoorOutdoorState()
     {
-        // 1. Переключаем активность объектов зон
         if (zoneConfigs != null)
         {
             foreach (var config in zoneConfigs)
             {
                 if (config.zoneObjects == null) continue;
-                
+
                 bool isActiveZone = (config.zone == currentZone);
                 foreach (var obj in config.zoneObjects)
                 {
                     if (obj != null)
                     {
-                        // Проверяем, не является ли объект частью Volume, чтобы не отключать его мгновенно
                         if (IsVolumeObject(obj)) continue;
 
                         obj.SetActive(isActiveZone);
@@ -381,8 +376,6 @@ public class DayNightCycle : MonoBehaviour
             }
         }
 
-        // Освещение теперь плавно обновляется в UpdateSunAndLighting на основе indoorTransitionT,
-        // поэтому мгновенное принудительное переключение здесь убрано во избежание мерцаний.
     }
 
     private void UpdateSunAndLighting(bool stateChanged)
@@ -391,25 +384,20 @@ public class DayNightCycle : MonoBehaviour
 
         EvaluateHourlyLighting(timeOfDay, out float lightIntensityFactor, out Color ambientColor, out Color fogColor);
 
-        // Обновляем позицию солнца для процедурного скайбокса (если задан)
         if (sunDirectionObject != null)
         {
             float sunAngle = (timePercent * 360f) - 90f;
             sunDirectionObject.localRotation = Quaternion.Euler(sunAngle, -30f, 0f);
         }
 
-        // Вычисляем целевой цвет эмбиента внутри помещения
         Color indoorAmbColor = darkIndoorColor;
 
-        // Плавно интерполируем цвет окружающего освещения и тумана
         Color finalAmbient = Color.Lerp(ambientColor, indoorAmbColor, indoorTransitionT);
         Color finalFog = Color.Lerp(fogColor, indoorAmbColor, indoorTransitionT);
 
-        // Интенсивность уличных источников света плавно гасится при входе в помещение
         float finalLightIntensityFactor = Mathf.Lerp(lightIntensityFactor, 0f, indoorTransitionT);
         UpdateOutdoorLights(finalLightIntensityFactor, finalAmbient);
 
-        // Обновляем параметры рендеринга каждый кадр для плавности
         RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
         RenderSettings.ambientLight = finalAmbient;
 
@@ -456,16 +444,12 @@ public class DayNightCycle : MonoBehaviour
             }
         }
 
-        // Плавно интерполируем параметры тумана и отражений
         RenderSettings.fogColor = Color.Lerp(RenderSettings.fogColor, targetFogColorValue, Time.deltaTime * transitionSpeed);
         RenderSettings.fogDensity = Mathf.Lerp(RenderSettings.fogDensity, targetFogDensity, Time.deltaTime * transitionSpeed);
         RenderSettings.fogStartDistance = Mathf.Lerp(RenderSettings.fogStartDistance, targetFogStart, Time.deltaTime * transitionSpeed);
         RenderSettings.fogEndDistance = Mathf.Lerp(RenderSettings.fogEndDistance, targetFogEnd, Time.deltaTime * transitionSpeed);
         RenderSettings.reflectionIntensity = Mathf.Lerp(RenderSettings.reflectionIntensity, targetReflection, Time.deltaTime * transitionSpeed);
 
-        // Плавное включение/выключение тумана (без скачков):
-        // Если туман должен работать, включаем его сразу, чтобы плотность росла плавно.
-        // Если туман выключается, держим его включенным, пока плотность не упадет почти до нуля, чтобы избежать рывка.
         if (targetFogEnabled)
         {
             RenderSettings.fog = true;
@@ -497,10 +481,8 @@ public class DayNightCycle : MonoBehaviour
                 bool isCurrent = (config.zone == currentZone);
                 float targetWeight = isCurrent ? 1f : 0f;
 
-                // Плавно смешиваем вес Global Volume
                 config.zoneVolume.weight = Mathf.MoveTowards(config.zoneVolume.weight, targetWeight, Time.deltaTime * transitionSpeed);
 
-                // Оптимизация производительности: выключаем GameObject объема, если его влияние равно 0
                 if (config.zoneVolume.weight > 0.001f)
                 {
                     if (!config.zoneVolume.gameObject.activeSelf)

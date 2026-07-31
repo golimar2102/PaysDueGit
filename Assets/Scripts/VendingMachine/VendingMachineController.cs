@@ -115,6 +115,8 @@ public class VendingMachineController : MonoBehaviour
     [Header("Дверца Лотка Выдачи (Tray Door)")]
     [Tooltip("3D объект дверцы/шторки лотка выдачи")]
     public Transform trayDoorTransform;
+    [Tooltip("Коллайдер дверцы лотка (автоматически отключается при открытии, чтобы не преграждать клики по предметам)")]
+    public Collider trayDoorCollider;
     [Tooltip("Ось вращения дверцы (например, Vector3(1, 0, 0) для поворота вверх/внутрь)")]
     public Vector3 doorRotationAxis = new Vector3(1f, 0f, 0f);
     [Tooltip("Угол открытия дверцы в градусах (например, -60 или 70)")]
@@ -138,7 +140,6 @@ public class VendingMachineController : MonoBehaviour
     private Quaternion originalDoorLocalRot;
     private bool isTrayDoorHovered = false;
 
-    // Сохранение состояния камеры и игрока
     private Transform mainCameraTransform;
     private Camera mainCameraComponent;
     private Transform originalCameraParent;
@@ -159,7 +160,6 @@ public class VendingMachineController : MonoBehaviour
             originalDoorLocalRot = trayDoorTransform.localRotation;
         }
 
-        // Отключаем доп. камеры на старте
         if (windowCamera != null) windowCamera.enabled = false;
         if (keypadCamera != null) keypadCamera.enabled = false;
         if (trayCamera != null) trayCamera.enabled = false;
@@ -187,23 +187,19 @@ public class VendingMachineController : MonoBehaviour
     {
         if (!isViewing || isTransitioning) return;
 
-        // Выход по Escape или Tab
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
         {
             ExitVendingMachineMode();
             return;
         }
 
-        // Обновляем подсветку кнопок под курсором (Outline Hover)
         UpdateButtonHover();
 
-        // Обновляем открытие/закрытие дверцы лотка при наведении на Экран 3
         UpdateTrayDoorHover();
 
         // Ввод с физической клавиатуры
         HandleKeyboardInput();
 
-        // Клик мышкой по кнопкам на экране 2 или товарам на экране 3
         if (Input.GetMouseButtonDown(0))
         {
             HandleMouseClick();
@@ -230,10 +226,12 @@ public class VendingMachineController : MonoBehaviour
             if (isTrayDoorHovered)
             {
                 PlaySound(doorOpenSound);
+                SetDoorCollidersEnabled(false);
             }
             else
             {
                 PlaySound(doorCloseSound);
+                SetDoorCollidersEnabled(true);
             }
         }
 
@@ -242,6 +240,25 @@ public class VendingMachineController : MonoBehaviour
             : originalDoorLocalRot;
 
         trayDoorTransform.localRotation = Quaternion.Slerp(trayDoorTransform.localRotation, desiredRot, Time.deltaTime * doorAnimSpeed);
+    }
+
+    private void SetDoorCollidersEnabled(bool isEnabled)
+    {
+        if (trayDoorCollider != null)
+        {
+            trayDoorCollider.enabled = isEnabled;
+        }
+        else if (trayDoorTransform != null)
+        {
+            Collider[] doorCols = trayDoorTransform.GetComponentsInChildren<Collider>();
+            foreach (Collider col in doorCols)
+            {
+                if (col != trayDropTrigger)
+                {
+                    col.enabled = isEnabled;
+                }
+            }
+        }
     }
 
     private void UpdateButtonHover()
@@ -286,7 +303,6 @@ public class VendingMachineController : MonoBehaviour
             }
         }
 
-        // Сброс (Backspace / Delete / C)
         if (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Delete) || Input.GetKeyDown(KeyCode.C))
         {
             PressClear();
@@ -306,7 +322,6 @@ public class VendingMachineController : MonoBehaviour
         Vector2 mousePos = Input.mousePosition;
         Vector2 normalizedMousePos = new Vector2(mousePos.x / Screen.width, mousePos.y / Screen.height);
 
-        // 1. Проверяем клик в зоне Клавиатуры (Экран 2)
         if (keypadCamera != null && keypadViewportRect.Contains(normalizedMousePos))
         {
             Ray ray = keypadCamera.ScreenPointToRay(mousePos);
@@ -321,16 +336,19 @@ public class VendingMachineController : MonoBehaviour
                 }
             }
         }
-        // 2. Проверяем клик в зоне Лотка Выдачи (Экран 3) для забора товара
         else if (trayCamera != null && trayViewportRect.Contains(normalizedMousePos))
         {
             Ray ray = trayCamera.ScreenPointToRay(mousePos);
-            if (Physics.Raycast(ray, out RaycastHit hit, 10f))
+            RaycastHit[] hits = Physics.RaycastAll(ray, 10f);
+            System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+            foreach (RaycastHit hit in hits)
             {
                 PickUpItem item = hit.collider.GetComponentInParent<PickUpItem>();
                 if (item != null)
                 {
                     item.PickUp();
+                    break;
                 }
             }
         }
@@ -435,7 +453,6 @@ public class VendingMachineController : MonoBehaviour
             slot.stockCount--;
         }
 
-        // Выдаем предмет и анимируем полку/спираль
         DispenseItem(slot);
 
         ShowStatusMessage("SUCCESS", dispenseSound);
@@ -449,7 +466,6 @@ public class VendingMachineController : MonoBehaviour
 
     private IEnumerator DispenseItemRoutine(VendingItemSlot slot)
     {
-        // 1. Ищем первый активный (передний) 3D-предмет на полке
         GameObject frontVisual = null;
         if (slot.shelfVisualObjects != null && slot.shelfVisualObjects.Length > 0)
         {
@@ -467,13 +483,11 @@ public class VendingMachineController : MonoBehaviour
             frontVisual = slot.shelfVisualObject;
         }
 
-        // 2. Запускаем вращение спирали/пружины (если привязана)
         if (slot.springSpiral != null)
         {
             StartCoroutine(RotateSpringRoutine(slot.springSpiral, slot.springRotationAxis, slot.springRotationAngle, slot.pushAnimDuration));
         }
 
-        // 3. Анимируем продвижение предметов на полке вперед к краю
         if (slot.shelfVisualObjects != null && slot.shelfVisualObjects.Length > 0)
         {
             yield return StartCoroutine(PushShelfItemsRoutine(slot, frontVisual));
@@ -488,7 +502,6 @@ public class VendingMachineController : MonoBehaviour
             }
         }
 
-        // 4. Предмет выкатился на край полки — запускаем физическое падение вниз по витрине!
         Vector3 fallStartPos = frontVisual != null ? frontVisual.transform.position : (dispenseSpawnPoint != null ? dispenseSpawnPoint.position + Vector3.up * 1.5f : transform.position + Vector3.up * 1.5f);
         Quaternion fallStartRot = frontVisual != null ? frontVisual.transform.rotation : transform.rotation;
 
@@ -505,7 +518,6 @@ public class VendingMachineController : MonoBehaviour
 
         if (fallingObj != null)
         {
-            // ОТКЛЮЧАЕМ аркадную левитацию и вращение предмета
             PickUpItem pickup = fallingObj.GetComponent<PickUpItem>();
             if (pickup == null) pickup = fallingObj.GetComponentInChildren<PickUpItem>();
             if (pickup != null)
@@ -513,7 +525,6 @@ public class VendingMachineController : MonoBehaviour
                 pickup.isFloating = false;
             }
 
-            // Настраиваем коллайдеры для честной физики
             Collider[] colliders = fallingObj.GetComponentsInChildren<Collider>();
             foreach (Collider col in colliders)
             {
@@ -524,7 +535,6 @@ public class VendingMachineController : MonoBehaviour
                 }
             }
 
-            // Включаем честную гравитацию и импульс падения с полки
             Rigidbody rb = fallingObj.GetComponent<Rigidbody>();
             if (rb == null) rb = fallingObj.AddComponent<Rigidbody>();
 
@@ -536,12 +546,10 @@ public class VendingMachineController : MonoBehaviour
                 : transform.TransformDirection(shelfDropImpulse);
             rb.AddForce(impulse, ForceMode.Impulse);
 
-            // Навешиваем компонент отслеживания касания лотка
             VendingFallingItem tracker = fallingObj.GetComponent<VendingFallingItem>();
             if (tracker == null) tracker = fallingObj.AddComponent<VendingFallingItem>();
             tracker.Init(this, slot);
 
-            // Резервное отслеживание уровня дна лотка
             StartCoroutine(FallbackLandingTracker(fallingObj, slot));
         }
     }
@@ -550,21 +558,18 @@ public class VendingMachineController : MonoBehaviour
     {
         if (fallingItem == null) return;
 
-        // Звук удара/падения предмета в лоток
         AudioSource soundToPlay = trayDropSound != null ? trayDropSound : dispenseSound;
         if (soundToPlay != null)
         {
             soundToPlay.Play();
         }
 
-        // Спавним забираемый предмет в точке лотка (или оставляем упавший)
         Transform spawnPoint = dispenseSpawnPoint != null ? dispenseSpawnPoint : fallingItem.transform;
 
         if (slot.itemPrefab != null)
         {
             GameObject finalItem = Instantiate(slot.itemPrefab, spawnPoint.position, spawnPoint.rotation);
 
-            // Отключаем аркадную левитацию и вращение предмета в лотке
             PickUpItem finalPickup = finalItem.GetComponent<PickUpItem>();
             if (finalPickup == null) finalPickup = finalItem.GetComponentInChildren<PickUpItem>();
             if (finalPickup != null)
@@ -693,7 +698,6 @@ public class VendingMachineController : MonoBehaviour
             }
         }
 
-        // По завершении продвижения передний предмет упал в шахту
         if (frontVisualToHide != null)
         {
             frontVisualToHide.SetActive(false);
@@ -750,7 +754,6 @@ public class VendingMachineController : MonoBehaviour
     }
 
     // =========================================================
-    //  РЕЖИМ ВЗАИМОДЕЙСТВИЯ И КАМЕРЫ (Split-Screen)
     // =========================================================
 
     public void EnterVendingMachineMode(Camera playerCam)
@@ -805,7 +808,6 @@ public class VendingMachineController : MonoBehaviour
 
         SetHighlight(false);
 
-        // Перемещение главной камеры к автомату
         if (cameraTargetPos != null)
         {
             StartCoroutine(MoveCameraToTarget(cameraTargetPos.position, cameraTargetPos.rotation));
@@ -894,7 +896,6 @@ public class VendingMachineController : MonoBehaviour
             trayCamera.enabled = true;
         }
 
-        // Отключаем отрисовку главной камеры, пока работают 3 viewport-камеры
         if (mainCameraComponent != null && (windowCamera != null || keypadCamera != null || trayCamera != null))
         {
             mainCameraComponent.enabled = false;
