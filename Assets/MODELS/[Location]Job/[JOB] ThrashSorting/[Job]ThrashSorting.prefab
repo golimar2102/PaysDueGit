@@ -1,0 +1,389 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3471059159191365175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 515.83435
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.100002125
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18862.102
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      propertyPath: m_Name
+      value: '[Job]ThrashSorting'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6215797413982872763, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6474685184870918467}
+    - targetCorrespondingSourceObject: {fileID: -8013748154211177301, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4233115575626536810}
+    - targetCorrespondingSourceObject: {fileID: 7635194186418141294, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3363235310524974357}
+    - targetCorrespondingSourceObject: {fileID: 4245065426805197333, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6482954572403906375}
+    - targetCorrespondingSourceObject: {fileID: 1593783737096754057, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 8730758941081456466}
+    - targetCorrespondingSourceObject: {fileID: 1289998241493571460, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 551051988621833621}
+    - targetCorrespondingSourceObject: {fileID: 2732874752726100058, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6897837671296588046}
+  m_SourcePrefab: {fileID: 100100000, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+--- !u!4 &236529499629532048 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3703084491173402023, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &775232017489177634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4245065426805197333, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6482954572403906375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775232017489177634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27593af52ff6b60409220195d9ab956f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashSortingButton
+  buttonType: 4
+  controller: {fileID: 8730758941081456466}
+  localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  customPromptText: 
+  buttonMeshTransform: {fileID: 0}
+  pressOffset: {x: 0, y: -0.04, z: 0}
+  pressSpeed: 25
+  returnSpeed: 15
+  buttonAudio: {fileID: 0}
+  buttonClickSound: {fileID: 0}
+  outline: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
+--- !u!1 &1569138270525771373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2732874752726100058, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6897837671296588046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569138270525771373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa909ef7adf710343ab88736c9e0d6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScrollingTexture
+  scrollSpeedX: 0
+  scrollSpeedY: 0.3
+  isScrolling: 1
+--- !u!1 &1843837867407048050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6215797413982872763, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6474685184870918467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843837867407048050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27593af52ff6b60409220195d9ab956f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashSortingButton
+  buttonType: 1
+  controller: {fileID: 8730758941081456466}
+  localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  customPromptText: 
+  buttonMeshTransform: {fileID: 0}
+  pressOffset: {x: 0, y: -0.04, z: 0}
+  pressSpeed: 25
+  returnSpeed: 15
+  buttonAudio: {fileID: 0}
+  buttonClickSound: {fileID: 0}
+  outline: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
+--- !u!1 &2369701996505287324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8013748154211177301, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4233115575626536810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369701996505287324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27593af52ff6b60409220195d9ab956f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashSortingButton
+  buttonType: 2
+  controller: {fileID: 8730758941081456466}
+  localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  customPromptText: 
+  buttonMeshTransform: {fileID: 0}
+  pressOffset: {x: 0, y: -0.04, z: 0}
+  pressSpeed: 25
+  returnSpeed: 15
+  buttonAudio: {fileID: 0}
+  buttonClickSound: {fileID: 0}
+  outline: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
+--- !u!1 &2435694760433676723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1289998241493571460, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &551051988621833621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435694760433676723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa909ef7adf710343ab88736c9e0d6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScrollingTexture
+  scrollSpeedX: 0
+  scrollSpeedY: 0.3
+  isScrolling: 1
+--- !u!1 &2753366469978224062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1593783737096754057, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8730758941081456466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753366469978224062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb7ef896c28e1e428197f24236c8909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashSortingController
+  standPoint: {fileID: 0}
+  conveyorTextures:
+  - {fileID: 551051988621833621}
+  - {fileID: 6897837671296588046}
+  conveyorAudio: {fileID: 0}
+  hammerTransform: {fileID: 8491278540009692805}
+  hammerDropDistance: 6
+  hammerDropSpeed: 25
+  hammerReturnSpeed: 12
+  hammerHitZone: {fileID: 0}
+  hammerAudio: {fileID: 0}
+  hammerSound: {fileID: 0}
+  dividerTransform: {fileID: 236529499629532048}
+  dividerRotationAxis: 0
+  dividerTargetAngleY: -39
+  dividerRotationSpeed: 10
+  dividerAudio: {fileID: 0}
+  dividerSound: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  dividerJunctionPoint: {fileID: 0}
+  rightEndPoint: {fileID: 0}
+  middleEndPoint: {fileID: 0}
+  customTrashItems: []
+  minItemsPerRound: 15
+  maxItemsPerRound: 50
+  baseTrashSpeed: 1
+  speedPerItemMultiplier: 0.08
+  spawnInterval: 1.8
+  scorePerCorrect: 5
+  monitor1UI: {fileID: 0}
+  monitor1Sprite: {fileID: 0}
+  monitor1Renderer: {fileID: 0}
+  monitor2UI: {fileID: 0}
+  monitor2Sprite: {fileID: 0}
+  monitor2Renderer: {fileID: 0}
+  monitor3UI: {fileID: 0}
+  monitor3Sprite: {fileID: 0}
+  monitor3Renderer: {fileID: 7433395200862283501}
+  monitor4Text: {fileID: 0}
+  monitor4UIText: {fileID: 0}
+  monitor5Text: {fileID: 0}
+  monitor5UIText: {fileID: 0}
+  startPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  hammerPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  dividerPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  stopPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!1 &6475619099146919513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7635194186418141294, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3363235310524974357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475619099146919513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27593af52ff6b60409220195d9ab956f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashSortingButton
+  buttonType: 3
+  controller: {fileID: 8730758941081456466}
+  localizedPrompt:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  customPromptText: 
+  buttonMeshTransform: {fileID: 0}
+  pressOffset: {x: 0, y: -0.04, z: 0}
+  pressSpeed: 25
+  returnSpeed: 15
+  buttonAudio: {fileID: 0}
+  buttonClickSound: {fileID: 0}
+  outline: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
+--- !u!23 &7433395200862283501 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6269877539239018714, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8491278540009692805 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5043109358080850098, guid: ced22defaf9ebfd4986104fb30e8f6a8, type: 3}
+  m_PrefabInstance: {fileID: 3471059159191365175}
+  m_PrefabAsset: {fileID: 0}

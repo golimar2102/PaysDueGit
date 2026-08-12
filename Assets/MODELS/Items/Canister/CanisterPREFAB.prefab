@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingTexture
   scrollSpeedX: 0.02
   scrollSpeedY: 0.01
+  isScrolling: 1
 --- !u!1 &7552828290432238614 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 87e978149f3cb3841a0e64da4e5838a0, type: 3}

@@ -115,6 +115,11 @@ public partial class PlayerInteract : MonoBehaviour
             currentLookIndustrialMeatGrinder.SetHighlight(false);
             currentLookIndustrialMeatGrinder = null;
         }
+        if (currentLookTrashSortingButton != null)
+        {
+            currentLookTrashSortingButton.SetHighlight(false);
+            currentLookTrashSortingButton = null;
+        }
     }
 
     private void FillContainer(InventorySlot slot, LiquidSource source)
@@ -469,6 +474,7 @@ public partial class PlayerInteract : MonoBehaviour
                                      h.collider.GetComponentInParent<WaterCoolerTap>() != null ||
                                      h.collider.GetComponentInParent<SinkTapController>() != null ||
                                      h.collider.GetComponentInParent<ButcheringTableController>() != null ||
+                                     (h.collider.GetComponentInParent<TrashSortingButton>() != null && h.collider.GetComponentInParent<TrashSortingButton>().CanInteract()) ||
                                      (h.collider.GetComponentInParent<GeneratorController>() != null && h.collider.GetComponentInParent<GeneratorController>().leverTransform != null && 
                                       (h.collider.transform == h.collider.GetComponentInParent<GeneratorController>().leverTransform || h.collider.transform.IsChildOf(h.collider.GetComponentInParent<GeneratorController>().leverTransform)));
 

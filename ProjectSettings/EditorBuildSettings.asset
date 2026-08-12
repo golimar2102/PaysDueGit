@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu/MainMenu.unity
     guid: acc3202c577bd3f419f52dec5dce8385
   - enabled: 1
-    path: Assets/Scenes/TestGrounds/TestGrounds.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/LocationFarm/Location_Farm.unity
+    guid: 3652ebe08131b514eb9c22e69759307d
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 967ff9f39d980ee43acdb7abeab27eba, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

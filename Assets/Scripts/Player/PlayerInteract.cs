@@ -60,15 +60,14 @@ public partial class PlayerInteract : MonoBehaviour
     private SinkTapController currentLookSinkTap;
     private ButcheringTableController currentLookButcheringTable;
     private IndustrialMeatGrinder currentLookIndustrialMeatGrinder;
+    private TrashSortingButton currentLookTrashSortingButton;
 
-    // Cached keycodes
     private KeyCode cachedInteractKey;
     private KeyCode cachedToggleKey;
 
     public KeyCode InteractKey => cachedInteractKey;
     public KeyCode ToggleKey => cachedToggleKey;
 
-    // Raycast components cache
     private Collider lastHitCollider;
     private PickUpItem        cachedItem;
     private DoorController    cachedDoor;
@@ -96,8 +95,8 @@ public partial class PlayerInteract : MonoBehaviour
     private ButcheringTableController cachedButcheringTable;
     private IndustrialMeatGrinder cachedIndustrialMeatGrinder;
     private EnemyAI         cachedEnemyAI;
+    private TrashSortingButton cachedTrashSortingButton;
 
-    // Animator trigger hash
     private static readonly int InteractHash = Animator.StringToHash("Interact");
 
     void Awake()

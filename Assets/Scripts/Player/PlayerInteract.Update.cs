@@ -28,7 +28,7 @@ public partial class PlayerInteract : MonoBehaviour
                 currentHoveredDoor = null;
             }
             if (interactText != null) interactText.gameObject.SetActive(false);
-            
+
             HandleGeneratorZoomedInteraction();
             return;
         }
@@ -120,7 +120,6 @@ public partial class PlayerInteract : MonoBehaviour
 
         if (PerformRaycast(ray, interactDistance, out hit))
         {
-            // Пересчитываем компоненты только при смене объекта
             if (hit.collider != lastHitCollider)
             {
                 lastHitCollider    = hit.collider;
@@ -150,7 +149,8 @@ public partial class PlayerInteract : MonoBehaviour
                 cachedButcheringTable = hit.collider.GetComponentInParent<ButcheringTableController>();
                 cachedIndustrialMeatGrinder = hit.collider.GetComponentInParent<IndustrialMeatGrinder>();
                 cachedEnemyAI         = hit.collider.GetComponentInParent<EnemyAI>();
-                
+                cachedTrashSortingButton = hit.collider.GetComponentInParent<TrashSortingButton>();
+
                 if (cachedItem != null && !cachedItem.isPlaced)
                 {
                     cachedMeatGrinder = null;
@@ -332,7 +332,7 @@ public partial class PlayerInteract : MonoBehaviour
                 {
                     currentPrompt += $"<color=#FFD700>[{cachedInteractKey}]</color> Покормить ({genderStr}, {cachedEnemyAI.age} лет, Сытость: {cachedEnemyAI.hunger:F0}%)\n";
                 }
-                
+
                 if (EnemyAI.carriedSlave == null && NPCCorpse.carriedCorpse == null)
                 {
                     currentPrompt += $"<color=#FFD700>[{cachedToggleKey}]</color> Взять раба на руки\n";
@@ -395,9 +395,8 @@ public partial class PlayerInteract : MonoBehaviour
             {
                 if (cachedCorpse.currentTable != null)
                 {
-                    // Труп на столе - взаимодействуем через стол разделки, но наведясь на труп
                     ButcheringTableController table = cachedCorpse.currentTable;
-                    
+
                     if (currentLookCorpse != cachedCorpse)
                     {
                         RemoveHighlight();
@@ -448,9 +447,8 @@ public partial class PlayerInteract : MonoBehaviour
                 }
                 else if (cachedCorpse.currentGrinder != null)
                 {
-                    // Труп на мясорубке - взаимодействуем через мясорубку, но наведясь на труп
                     IndustrialMeatGrinder grinder = cachedCorpse.currentGrinder;
-                    
+
                     if (currentLookIndustrialMeatGrinder != grinder)
                     {
                         RemoveHighlight();
@@ -460,7 +458,7 @@ public partial class PlayerInteract : MonoBehaviour
 
                     bool carryingCorpse = NPCCorpse.carriedCorpse != null;
                     string prompt = grinder.GetInteractPrompt(carryingCorpse, cachedInteractKey, cachedToggleKey, 1);
-                    
+
                     if (!string.IsNullOrEmpty(prompt))
                     {
                         currentPrompt += prompt + "\n";
@@ -510,7 +508,6 @@ public partial class PlayerInteract : MonoBehaviour
             }
             else if (cachedButcheringTable != null)
             {
-                // Если на столе есть труп, мы не взаимодействуем со столом напрямую (только через труп)
                 if (cachedButcheringTable.hasCorpse)
                 {
                     RemoveHighlight();
@@ -526,7 +523,7 @@ public partial class PlayerInteract : MonoBehaviour
 
                     bool carryingCorpse = NPCCorpse.carriedCorpse != null;
                     string prompt = cachedButcheringTable.GetInteractPrompt(carryingCorpse, cachedInteractKey, cachedToggleKey);
-                    
+
                     if (!string.IsNullOrEmpty(prompt))
                     {
                         currentPrompt += prompt + "\n";
@@ -554,14 +551,14 @@ public partial class PlayerInteract : MonoBehaviour
 
                 bool carryingCorpse = NPCCorpse.carriedCorpse != null;
                 string prompt = cachedIndustrialMeatGrinder.GetInteractPrompt(carryingCorpse, cachedInteractKey, cachedToggleKey, lookArea);
-                
+
                 if (!string.IsNullOrEmpty(prompt))
                 {
                     currentPrompt += prompt + "\n";
                     foundSomething = true;
                 }
 
-                if (lookArea == 1) // Conveyor Belt
+                if (lookArea == 1)
                 {
                     if (!cachedIndustrialMeatGrinder.hasCorpse)
                     {
@@ -582,7 +579,7 @@ public partial class PlayerInteract : MonoBehaviour
                         }
                     }
                 }
-                else if (lookArea == 2) // Button 1 (ON Button)
+                else if (lookArea == 2)
                 {
                     if (Input.GetKeyDown(cachedInteractKey) && cachedIndustrialMeatGrinder.state == IndustrialMeatGrinder.GrinderState.Idle)
                     {
@@ -597,7 +594,7 @@ public partial class PlayerInteract : MonoBehaviour
                         }
                     }
                 }
-                else if (lookArea == 3) // Button 2 (OFF Button)
+                else if (lookArea == 3)
                 {
                     if (Input.GetKeyDown(cachedInteractKey) && cachedIndustrialMeatGrinder.state == IndustrialMeatGrinder.GrinderState.Idle)
                     {
@@ -617,7 +614,7 @@ public partial class PlayerInteract : MonoBehaviour
             {
                 string mgPrompt = (cachedMeatGrinder.interactPrompt != null && !cachedMeatGrinder.interactPrompt.IsEmpty) ? cachedMeatGrinder.interactPrompt.GetLocalizedString() : "Использовать мясорубку";
                 currentPrompt += $"<color=#FFD700>[{cachedInteractKey}]</color> {mgPrompt}\n";
-                
+
                 if (cachedItem != null && cachedItem.isPlacedOnSnapPoint)
                 {
                     string pickupStr = (actions != null && actions.pickUpAction != null && !actions.pickUpAction.IsEmpty) ? actions.pickUpAction.GetLocalizedString() : "Взять:";
@@ -865,7 +862,7 @@ public partial class PlayerInteract : MonoBehaviour
                 {
                     InventoryItemData containerData = activeSlot.itemData;
                     bool isAllowedType = cachedWaterCoolerPipe.controller.allowedLiquids.Contains(containerData.currentLiquidType);
-                    
+
                     if (!isAllowedType || containerData.currentAmount <= 0)
                     {
                         string liquidName = GetLocalizedLiquidName(containerData.currentLiquidType);
@@ -949,7 +946,6 @@ public partial class PlayerInteract : MonoBehaviour
 
                 bool isCoolerEmpty = cachedWaterCoolerTap.IsEmpty();
 
-                // 1. Логика набора воды (E)
                 if (hasContainer)
                 {
                     InventoryItemData containerData = activeSlot.itemData;
@@ -1068,7 +1064,6 @@ public partial class PlayerInteract : MonoBehaviour
                     animator?.SetTrigger(InteractHash);
                 }
 
-                // 2. Набор воды из раковины (F)
                 InventorySlot activeSlot = null;
                 if (InventoryManager.Instance != null && InventoryManager.Instance.hotbarSlots != null)
                 {
@@ -1127,7 +1122,6 @@ public partial class PlayerInteract : MonoBehaviour
                         currentLookLiquidSource.SetHighlight(true);
                     }
 
-                    // Check active slot container eligibility
                     InventorySlot activeSlot = null;
                     if (InventoryManager.Instance != null && InventoryManager.Instance.hotbarSlots != null)
                     {
@@ -1146,7 +1140,6 @@ public partial class PlayerInteract : MonoBehaviour
                         activeSlot.itemData.isConsumable && 
                         (activeSlot.itemData.consumableType == ConsumableType.LampOil || activeSlot.itemData.consumableType == ConsumableType.LiquidContainer))
                     {
-                        // Player has a container
                         InventoryItemData containerData = activeSlot.itemData;
                         if (containerData.currentAmount >= containerData.maxAmount)
                         {
@@ -1170,7 +1163,6 @@ public partial class PlayerInteract : MonoBehaviour
                     }
                     else
                     {
-                        // Player does not have a container
                         currentPrompt += $"Нужен пустой сосуд для {srcName}\n";
                     }
                 }
@@ -1245,7 +1237,7 @@ public partial class PlayerInteract : MonoBehaviour
 
                         FryingPan pan = cachedItem.GetComponent<FryingPan>();
                         if (pan == null) pan = cachedItem.GetComponentInChildren<FryingPan>();
-                        
+
                         bool canPutDumplings = false;
                         string dumplingMeatType = "";
                         bool blockPickup = false;
@@ -1254,7 +1246,6 @@ public partial class PlayerInteract : MonoBehaviour
 
                         if (pot != null && InventoryManager.Instance != null)
                         {
-                            // 1. Проверяем, можно ли засыпать сырые пельмени
                             int index = InventoryManager.Instance.selectedSlotIndex;
                             if (index >= 0 && index < InventoryManager.Instance.hotbarSlots.Length)
                             {
@@ -1262,8 +1253,7 @@ public partial class PlayerInteract : MonoBehaviour
                                 if (activeSlot != null && !activeSlot.IsEmpty() && activeSlot.itemData != null)
                                 {
                                     canPutDumplings = pot.CanAcceptDumplings(activeSlot.itemData.itemID, out dumplingMeatType);
-                                    
-                                    // Проверяем, держит ли игрок тарелку для сбора готовых пельменей
+
                                     if (pot.AreDumplingsCooked() && activeSlot.itemData.itemID == pot.plateItemID)
                                     {
                                         canPlateDumplings = true;
@@ -1271,7 +1261,6 @@ public partial class PlayerInteract : MonoBehaviour
                                 }
                             }
 
-                            // Если в кастрюле есть любые пельмени, блокируем обычный подбор кастрюли
                             if (pot.HasAnyDumplings())
                             {
                                 blockPickup = true;
@@ -1279,7 +1268,6 @@ public partial class PlayerInteract : MonoBehaviour
                         }
                         else if (pan != null && InventoryManager.Instance != null)
                         {
-                            // 1. Проверяем, можно ли засыпать сырые пельмени в сковороду
                             int index = InventoryManager.Instance.selectedSlotIndex;
                             if (index >= 0 && index < InventoryManager.Instance.hotbarSlots.Length)
                             {
@@ -1287,8 +1275,7 @@ public partial class PlayerInteract : MonoBehaviour
                                 if (activeSlot != null && !activeSlot.IsEmpty() && activeSlot.itemData != null)
                                 {
                                     canPutDumplings = pan.CanAcceptDumplings(activeSlot.itemData.itemID, out dumplingMeatType);
-                                    
-                                    // Проверяем, держит ли игрок миску для сбора готовых пельменей
+
                                     if (pan.AreDumplingsCooked() && activeSlot.itemData.itemID == pan.bowlItemID)
                                     {
                                         canBowlDumplings = true;
@@ -1296,14 +1283,12 @@ public partial class PlayerInteract : MonoBehaviour
                                 }
                             }
 
-                            // Если в сковороде есть любые пельмени, блокируем обычный подбор
                             if (pan.HasAnyDumplings())
                             {
                                 blockPickup = true;
                             }
                         }
 
-                        // Действие по ЛКМ: Засыпать пельмени
                         if (canPutDumplings)
                         {
                             currentPrompt += "<color=#FFD700>[ЛКМ]</color> Положить пельмени\n";
@@ -1332,7 +1317,6 @@ public partial class PlayerInteract : MonoBehaviour
                             currentLookItem.SetHighlight(true);
                         }
 
-                        // Действие по клавише взаимодействия (E)
                         KeyCode pickupKey = cachedItem.isPlacedOnSnapPoint ? cachedToggleKey : cachedInteractKey;
 
                         if (blockPickup)
@@ -1389,7 +1373,6 @@ public partial class PlayerInteract : MonoBehaviour
                         }
                         else
                         {
-                            // Обычный подбор предмета (когда он пустой)
                             string pickupStr = (actions != null && actions.pickUpAction != null && !actions.pickUpAction.IsEmpty) ? actions.pickUpAction.GetLocalizedString() : "Взять:";
                             currentPrompt += $"<color=#FFD700>[{pickupKey}]</color> {pickupStr} {cachedItem.itemName}\n";
                             foundSomething = true;
@@ -1401,6 +1384,25 @@ public partial class PlayerInteract : MonoBehaviour
                                 animator?.SetTrigger(InteractHash);
                             }
                         }
+                    }
+                }
+                else if (cachedTrashSortingButton != null && cachedTrashSortingButton.CanInteract())
+                {
+                    if (currentLookTrashSortingButton != cachedTrashSortingButton)
+                    {
+                        RemoveHighlight();
+                        currentLookTrashSortingButton = cachedTrashSortingButton;
+                        currentLookTrashSortingButton.SetHighlight(true);
+                    }
+
+                    string promptStr = cachedTrashSortingButton.GetPromptText(cachedInteractKey);
+                    currentPrompt += promptStr + "\n";
+                    foundSomething = true;
+
+                    if (Input.GetKeyDown(cachedInteractKey))
+                    {
+                        cachedTrashSortingButton.Interact(this);
+                        animator?.SetTrigger(InteractHash);
                     }
                 }
                 else if (cachedToggleDevice != null && cachedToggleDevice.isSwitch)
@@ -1420,7 +1422,7 @@ public partial class PlayerInteract : MonoBehaviour
                 if (cachedToggleDevice != null)
                 {
                     KeyCode activeKey = cachedToggleDevice.isSwitch ? cachedInteractKey : cachedToggleKey;
-                    
+
                     string toggleStr = (actions != null && actions.toggle != null && !actions.toggle.IsEmpty) ? actions.toggle.GetLocalizedString() : cachedToggleDevice.promptText;
                     currentPrompt += $"<color=#FFD700>[{activeKey}]</color> {toggleStr}\n";
                     foundSomething = true;
@@ -1435,7 +1437,6 @@ public partial class PlayerInteract : MonoBehaviour
         }
         else
         {
-            // Нет хита — сбрасываем кэш
             lastHitCollider = null;
             RemoveHighlight();
 

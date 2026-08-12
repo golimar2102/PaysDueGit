@@ -9,21 +9,24 @@ public class ScrollingTexture : MonoBehaviour
     [Tooltip("Движение по вертикали (вперед/назад)")]
     public float scrollSpeedY = 0.01f;
 
+    [Tooltip("Активно ли перемещение текстуры")]
+    public bool isScrolling = true;
+
     private Renderer rend;
-    // Кэшируем экземпляр материала один раз, чтобы не создавать новый каждый кадр
     private Material materialInstance;
     private bool useBaseMap;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
-        // Берём (или создаём) экземпляр материала один раз
         materialInstance = rend.material;
         useBaseMap = materialInstance.HasProperty("_BaseMap");
     }
 
     void Update()
     {
+        if (!isScrolling) return;
+
         float offsetX = Time.time * scrollSpeedX;
         float offsetY = Time.time * scrollSpeedY;
 
